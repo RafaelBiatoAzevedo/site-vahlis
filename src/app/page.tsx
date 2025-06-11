@@ -7,6 +7,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Counter from "@/components/Counter";
 import Image from "next/image";
+import Header from "@/components/Header";
+import ArrowRightIcon from "@/components/ArrowRight";
 
 const messages = [
   {
@@ -47,13 +49,19 @@ export default function HomePage() {
   return (
     <div className="main-home">
       <div className="wrapper-one">
-        <p>Vahlis Incorporadora,</p>
-        <p>Mais que empreendimentos.</p>
-        <p>Nós construímos experiências.</p>
+        <div className="overlay-top">
+          <Header />
+          <div>
+            <p>Vahlis Incorporadora,</p>
+            <p>Mais que empreendimentos.</p>
+            <p>Nós construímos experiências.</p>
+          </div>
+        </div>
       </div>
       <div className="wrapper-two">
         <div>
-          <p>"</p>
+          <p style={{ fontFamily: "var(--font-playfair)" }}>“Vahlis”</p>
+          <p>''</p>
           <p>Damos início a narrativas</p>
           <p>duradouras que</p>
           <p>transcendem gerações</p>
@@ -65,6 +73,45 @@ export default function HomePage() {
           width={800}
           height={400}
         />
+      </div>
+      <div className="wrapper-invest">
+        <p>Desenvolvemos espaços</p>
+        <p>
+          que valorizam quem <b>vive</b>
+        </p>
+        <p>
+          e quem <b>investe.</b>
+        </p>
+      </div>
+      <div className="wrapper-legacy">
+        <div className="overlay">
+          <div>
+            <p>Um legado que inspira o futuro</p>
+            <div>
+              <p>Desde 1933, a Vahlis transforma lugares com</p>
+              <p>elegância, visão e excelência. Fundada por Santos</p>
+              <p>Vahlis, nossa trajetória é marcada por mais de 200</p>
+              <p>empreendimentos que ajudaram a moldar o cenário</p>
+              <p>urbano do país.</p>
+            </div>
+            <button>
+              Conheça mais da Vahlis{" "}
+              <ArrowRightIcon
+                width={20}
+                height={20}
+                style={{ color: "white" }}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="wrapper-quality">
+        <p>Nosso compromisso com</p>
+        <p>padrões de qualidade</p>
+      </div>
+      <div className="wrapper-project">
+        <p>Eleva cada projeto</p>
+        <p>a um novo patamar</p>
       </div>
       <div className="wrapper-data">
         <div className="image-wrapper-rect">

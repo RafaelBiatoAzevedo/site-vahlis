@@ -2,9 +2,16 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { Outfit } from "next/font/google";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"], // ajuste os pesos conforme necessário
+  variable: "--font-playfair", // opcional: define uma CSS custom property
+  display: "swap",
+});
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,10 +33,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" className={outfit.variable}>
+    <html lang="pt-BR" className={(outfit.variable, playfair.variable)}>
       <head />
       <body>
-        <Header />
         {children}
         <Contact />
         <Footer />

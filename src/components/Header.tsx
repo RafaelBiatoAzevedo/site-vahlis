@@ -23,7 +23,7 @@ export default function Header({ absolute }: HeaderProps) {
           </Link>
         ))}
       </nav>
-      <ButtonContact />
+      <ButtonContact size="small" />
     </div>
   );
 }
