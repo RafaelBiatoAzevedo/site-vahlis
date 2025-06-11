@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem  5rem;
+  width: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 4rem
+}
+
+.nav-menu {
+  font-size: 1.3rem;
+  font-weight: 300;
+}

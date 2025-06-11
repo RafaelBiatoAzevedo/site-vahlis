@@ -1,95 +1,150 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "../styles/components/Home.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import Counter from "@/components/Counter";
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+const messages = [
+  {
+    title: "Gabriela Alves",
+    message:
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+  },
+  {
+    title: "Carlos Moreira",
+    message:
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+  },
+  {
+    title: "Juliana Freitas",
+    message:
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+  },
+  {
+    title: "Luciana Prado",
+    message:
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+  },
+  {
+    title: "Marcos Silva",
+    message:
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+  },
+];
+
+const enterprisesItems = [
+  { iconPath: "/SVG/texasLogo.svg", label: "Texas" },
+  { iconPath: "/SVG/scaeLogo.svg", label: "Scae" },
+  { iconPath: "/SVG/santosVahlisLogo.svg", label: "Santos Vahlis" },
+  { iconPath: "/SVG/ciaRodeioLogo.svg", label: "Cia Rodeo" },
+];
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className="main-home">
+      <div className="wrapper-one">
+        <p>Vahlis Incorporadora,</p>
+        <p>Mais que empreendimentos.</p>
+        <p>Nós construímos experiências.</p>
+      </div>
+      <div className="wrapper-two">
+        <div>
+          <p>"</p>
+          <p>Damos início a narrativas</p>
+          <p>duradouras que</p>
+          <p>transcendem gerações</p>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <Image
+          className="vector-image"
+          src="/SVG/vector.svg"
+          alt="Logo"
+          width={800}
+          height={400}
+        />
+      </div>
+      <div className="wrapper-data">
+        <div className="image-wrapper-rect">
+          <img
+            src="/images/imageData.jpg"
+            alt="entreprise"
+            className="image-contain"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+
+        <div>
+          <p>
+            <Counter end={90} duration={1000} />+
+          </p>
+          <p>Anos de atuação</p>
+
+          <p>
+            <Counter end={100} duration={1000} />%
+          </p>
+          <p>De satisfação</p>
+
+          <p>
+            <Counter end={200} duration={1000} />+
+          </p>
+          <p>Prédios entregues</p>
+        </div>
+      </div>
+      <div className="enterprise-vahlis">
+        <p>Empresas do grupo Vahlis</p>
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={2}
+          spaceBetween={30}
+          autoplay={{ delay: 3000 }}
+          breakpoints={{
+            640: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          {enterprisesItems.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="enterprise-slide">
+                <img
+                  src={item.iconPath}
+                  alt={item.label}
+                  className="logo-img"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="say-vahlis">
+        <div className="divisor-solid"></div>
+
+        <p>O que dizem da Vahlis</p>
+
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 6000 }}
+          spaceBetween={30}
+          slidesPerView={3}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {messages.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="testimonial-slide">
+                <p>{item.title}</p>
+                <div className="divisor-line"></div>
+                <p>{item.message}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

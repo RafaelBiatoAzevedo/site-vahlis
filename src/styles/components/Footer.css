@@ -1,0 +1,48 @@
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-info-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem  5rem;
+  width: 100%;
+}
+
+.wrapper-info-footer > div:first-of-type p:first-of-type {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.wrapper-info-footer > div:first-of-type p:not(:first-of-type),
+.wrapper-info-footer > p:first-of-type, .main-footer > p:last-child  {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-social-links > p {
+  margin-bottom: 0.8rem;
+}
+
+.wrapper-social-links > div {
+  display: flex;
+  align-items: center;
+  
+  gap: 1rem;
+}
+
+.main-footer > p:last-child {
+  padding: 2rem;
+}
+

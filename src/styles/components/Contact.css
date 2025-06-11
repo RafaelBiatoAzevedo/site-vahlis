@@ -1,0 +1,22 @@
+.main-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  min-height: 600px;
+}
+
+.main-contact > div {
+  margin-bottom: 4rem;
+}
+
+.main-contact > div > p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #000000;
+  font-weight: 200;
+}
