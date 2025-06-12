@@ -1,0 +1,269 @@
+.wrapper-one-services {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-image: url('/images/image-top-services.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.wrapper-one-services .overlay-top-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 1%,
+    rgba(0, 0, 0, 0.0) 13%, 
+     rgba(0, 0, 0, 0.0) 40%,
+    rgba(0, 0, 0, 0.9) 100%
+    );
+  z-index: 1;
+   padding: 5rem;
+   padding-top: 0px;
+}
+
+.wrapper-one-services .overlay-top-services > * {
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper-one-services > .overlay-top-services > div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-one-services > .overlay-top-services > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-one-services > .overlay-top-services > div:nth-child(2) p:first-child {
+  border-top: solid 2px #CA8A2A;
+  font-size: 2rem;
+  padding: 0.3rem 0px 0.5rem 0px;
+  font-weight: 400;
+}
+
+.wrapper-one-services > .overlay-top-services > div:nth-child(2) p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+   
+.wrapper-organization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 5rem;
+  background-color: #ffffff;
+}
+
+.wrapper-organization > div, .wrapper-howmake > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-organization > div > p:first-child {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.wrapper-organization > div > p {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 200;
+}
+
+.wrapper-howmake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 5rem;
+  background-color: #ffffff;
+}
+
+.wrapper-howmake > div > p:first-child {
+  border-top: solid 2px #CA8A2A;
+  font-size: 2rem;
+  color: #000000;
+}
+
+
+.wrapper-analysis , .wrapper-acquisition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.wrapper-analysis >  img, .wrapper-acquisition > img {
+  height: 100%;
+}
+
+.wrapper-analysis > div, .wrapper-acquisition > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 5rem;
+}
+
+.wrapper-analysis > div > p, .wrapper-acquisition > div > p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.wrapper-analysis > div > div, .wrapper-acquisition > div > div  {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.wrapper-analysis > div > div >  p, .wrapper-acquisition > div > div > p {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 200;
+}
+
+.wrapper-legalization {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('/images/image-legalization.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  padding: 5rem;
+  color: white;
+  overflow: hidden;
+}
+
+.wrapper-legalization .overlay-legalization {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  padding: 5rem;
+}
+
+.wrapper-legalization > .overlay-legalization > div {
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+.wrapper-legalization > .overlay-legalization  > div > p {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+.wrapper-legalization > .overlay-legalization  > div >  div {
+  padding: 1rem 0px;
+}
+
+.wrapper-legalization > .overlay-legalization  > div >  div > p {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-weight: 200;
+}
+
+.wrapper-marketing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('/images/image-marketing.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  padding: 5rem;
+  color: white;
+  overflow: hidden;
+}
+
+.wrapper-marketing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/image-marketing.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scaleX(-1);
+  z-index: 0;
+}
+
+.wrapper-marketing .overlay-marketing {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.94));
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  padding: 5rem;
+}
+
+.wrapper-marketing > .overlay-marketing > div {
+  margin-left: auto; /* empurra o conteúdo para a direita */
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+.wrapper-marketing > .overlay-marketing  > div > p {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+.wrapper-marketing > .overlay-marketing  > div >  div {
+  padding: 1rem 0px;
+}
+
+.wrapper-marketing > .overlay-marketing  > div >  div > p {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-weight: 200;
+}

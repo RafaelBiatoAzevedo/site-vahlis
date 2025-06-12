@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
+  weight: ["100", "200", "300", "400", "500", "700"],
   variable: "--font-outfit",
   display: "swap",
 });
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" className={(outfit.variable, playfair.variable)}>
+    <html lang="pt-BR" className={`${outfit.variable} ${playfair.variable}`}>
       <head />
       <body>
         {children}

@@ -60,8 +60,7 @@ export default function HomePage() {
       </div>
       <div className="wrapper-two">
         <div>
-          <p style={{ fontFamily: "var(--font-playfair)" }}>“Vahlis”</p>
-          <p>''</p>
+          <p style={{ fontFamily: "var(--font-playfair)" }}>“</p>
           <p>Damos início a narrativas</p>
           <p>duradouras que</p>
           <p>transcendem gerações</p>
