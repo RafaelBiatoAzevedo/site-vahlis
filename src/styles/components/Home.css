@@ -285,8 +285,6 @@
   min-height: 500px;
   background-color: #ffffff;
   padding: 5rem;
-
-  gap: 3rem;
 }
 
 .wrapper-data > div:last-child {
@@ -296,7 +294,7 @@
   justify-content: center;
 }
 
-.wrapper-data > div:last-child p {
+.wrapper-data > div:last-child > p {
  color: #000000;
 }
 
@@ -332,9 +330,8 @@
 @media (max-width: 1336px) {
   .wrapper-data {
     flex-direction: row; /* lado a lado */
-    padding: 3rem 1.5rem;
+    padding: 5rem;
     min-height: auto;
-    gap: 2rem;
   }
 
   .wrapper-data > div:last-child {
