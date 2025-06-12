@@ -1,0 +1,226 @@
+.wrapper-one-vahlis {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-image: url('/images/image-top-vahlis.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.wrapper-one-vahlis .overlay-top-vahlis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 1%,
+    rgba(0, 0, 0, 0.0) 13%, 
+     rgba(0, 0, 0, 0.0) 40%,
+    rgba(0, 0, 0, 0.9) 100%
+    );
+   z-index: 1;
+   padding: 5rem;
+   padding-top: 0px;
+}
+
+.wrapper-one-vahlis .overlay-top-vahlis > * {
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper-one-vahlis > .overlay-top-vahlis > div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-one-vahlis > .overlay-top-vahlis > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-one-vahlis > .overlay-top-vahlis > div:nth-child(2) p:first-child {
+  border-top: solid 2px #CA8A2A;
+  font-size: 2rem;
+  padding: 0.3rem 0px 0.5rem 0px;
+  font-weight: 400;
+}
+
+.wrapper-one-vahlis > .overlay-top-vahlis > div:nth-child(2) p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.wrapper-history  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.wrapper-history > img {
+  height: 100%;
+}
+
+.wrapper-history > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  gap: 1rem
+}
+
+.wrapper-history > div > div > p{
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 200;
+}
+
+.wrapper-who {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('/images/image-who.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+  padding: 5rem;
+  color: white;
+  overflow: hidden;
+}
+
+.wrapper-who .overlay-who {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem;
+}
+
+.wrapper-who > .overlay-who > div  {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+}
+
+ .wrapper-who > .overlay-who > div > div > div > p:first-child {
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+ .wrapper-who > .overlay-who > div > div > p {
+  font-size: 1rem;
+  color: #FFFFFF;
+  font-weight: 200;
+ }
+
+ .wrapper-mission {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 530px;
+  padding: 5rem;
+  background-color: #ffffff;
+}
+
+.wrapper-mission > div > p:first-child {
+  border-top: solid 2px #CA8A2A;
+  font-size: 2rem;
+  color: #000000;
+}
+
+.wrapper-mission > div:first-child  {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 4rem;
+  position: absolute;
+  padding:  0px 5rem;
+  top: -24px;
+}
+
+.wrapper-mission > div:first-child > div {
+  border: solid 1px #000000;
+  padding: 4.4rem 1.8rem ;
+  border-radius: 1.6rem;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.wrapper-mission > div:first-child > div > div > p:first-child {
+  font-size: 2.4rem;
+  color: #000000;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.wrapper-mission > div:first-child > div > p {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 200;
+}
+
+.wrapper-timeline-one ,
+.wrapper-timeline-two,
+.wrapper-timeline-three {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+}
+
+.wrapper-timeline-one > div > img,
+.wrapper-timeline-two > div > img,
+.wrapper-timeline-three > div > img {
+  height: 900px;
+}
+
+.wrapper-timeline-one > div,
+.wrapper-timeline-two > div,
+.wrapper-timeline-three > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+}
+
+.wrapper-timeline-one > div > div,
+.wrapper-timeline-two > div > div,
+.wrapper-timeline-three > div > div {
+  width: 100%;
+  height: 100%;
+  border: solid red;
+}
+
+ 

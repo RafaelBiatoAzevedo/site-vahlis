@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import "../../styles/components/Services.css";
-import Image from "next/image";
 
 export default function Servicos() {
   return (
