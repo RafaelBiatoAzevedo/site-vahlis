@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { Outfit } from "next/font/google";
 import Footer from "@/components/Footer";
-import Contact from "@/components/Contact";
 import { Playfair_Display } from "next/font/google";
+import Contact from "@/components/Contact";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "700"], // ajuste os pesos conforme necessário
-  variable: "--font-playfair", // opcional: define uma CSS custom property
+  weight: ["400", "700"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -37,6 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head />
       <body>
         {children}
+        <Contact />
         <Footer />
       </body>
     </html>
