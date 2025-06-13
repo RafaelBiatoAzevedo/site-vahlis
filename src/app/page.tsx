@@ -15,7 +15,7 @@ const messages = [
   {
     title: "Eduardo Arsufi",
     message:
-    "Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos."
+      "Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos.",
   },
   {
     title: "Daniel Pepe",
@@ -40,7 +40,7 @@ const messages = [
   {
     title: "Grabriela Alves",
     message:
-     "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas".,
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
   },
 ];
 
