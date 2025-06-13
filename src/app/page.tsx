@@ -16,37 +16,37 @@ const messages = [
     title: "Eduardo Arsufi",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '“Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos."',
+      "Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos.",
   },
   {
     title: "Daniel Pepe",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '"Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!"',
+      "Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!",
   },
   {
     title: "Grabriela Alves",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '"Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas."',
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
   },
   {
     title: "Eduardo Arsufi",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '“Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos."',
+      "Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos.",
   },
   {
     title: "Daniel Pepe",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '"Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!"',
+      "Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!",
   },
   {
     title: "Grabriela Alves",
     message:
       // eslint-disable-next-line react/no-unescaped-entities
-      '"Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas."',
+      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
   },
 ];
 
