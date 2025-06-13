@@ -9,32 +9,38 @@ import Counter from "@/components/Counter";
 import Image from "next/image";
 import Header from "@/components/Header";
 import ArrowRightIcon from "@/components/ArrowRight";
+import { useRef } from "react";
 
 const messages = [
   {
-    title: "Gabriela Alves",
+    title: "Eduardo Arsufi",
     message:
-      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+      "“Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos.”",
   },
   {
-    title: "Carlos Moreira",
+    title: "Daniel Pepe",
     message:
-      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+      "“Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!”",
   },
   {
-    title: "Juliana Freitas",
+    title: "Grabriela Alves",
     message:
-      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+      "“Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.”",
   },
   {
-    title: "Luciana Prado",
+    title: "Eduardo Arsufi",
     message:
-      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+      "“Sou cliente da Vahlis desde outubro de 2023. Estou muito contente com os resultados que toda assessoria e atendimento têm me proporcionado. Por isso eu indico a Vahlis para todos.”",
   },
   {
-    title: "Marcos Silva",
+    title: "Daniel Pepe",
     message:
-      "Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.",
+      "“Sou investidor da Vahlis desde novembro de 2023. Acabei de renovar contrato por mais 12 meses! É um belo investimento e por isso eu recomendo para todo mundo!”",
+  },
+  {
+    title: "Grabriela Alves",
+    message:
+      "“Sou cliente da Vahlis desde 2022 e minha experiência tem sido extremamente positiva. A empresa oferece um atendimento personalizado e acessível, sempre disposta a esclarecer dúvidas.”",
   },
 ];
 
@@ -43,12 +49,48 @@ const enterprisesItems = [
   { iconPath: "/SVG/scaeLogo.svg", label: "Scae" },
   { iconPath: "/SVG/santosVahlisLogo.svg", label: "Santos Vahlis" },
   { iconPath: "/SVG/ciaRodeioLogo.svg", label: "Cia Rodeo" },
+  { iconPath: "/SVG/texasLogo.svg", label: "Texas" },
+  { iconPath: "/SVG/scaeLogo.svg", label: "Scae" },
+  { iconPath: "/SVG/santosVahlisLogo.svg", label: "Santos Vahlis" },
+  { iconPath: "/SVG/ciaRodeioLogo.svg", label: "Cia Rodeo" },
 ];
 
 export default function HomePage() {
+  const fallbackRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const legacyFallbackRef = useRef<HTMLDivElement>(null);
+  const legacyVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoError: React.ReactEventHandler<HTMLVideoElement> = () => {
+    if (videoRef.current) videoRef.current.style.display = "none";
+    if (fallbackRef.current) fallbackRef.current.style.display = "block";
+  };
+
+  const handleLegacyVideoError: React.ReactEventHandler<
+    HTMLVideoElement
+  > = () => {
+    if (legacyVideoRef.current) legacyVideoRef.current.style.display = "none";
+    if (legacyFallbackRef.current)
+      legacyFallbackRef.current.style.display = "block";
+  };
+
   return (
     <div className="main-home">
       <div className="wrapper-one">
+        <video
+          ref={videoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleVideoError}
+        >
+          <source src="/videos/home.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={fallbackRef} className="bg-fallback" />
+
         <div className="overlay-top">
           <Header />
           <div>
@@ -65,6 +107,8 @@ export default function HomePage() {
           <p>duradouras que</p>
           <p>transcendem gerações</p>
         </div>
+      </div>
+      <div className="wrapper-vector">
         <Image
           className="vector-image"
           src="/SVG/vector.svg"
@@ -83,6 +127,19 @@ export default function HomePage() {
         </p>
       </div>
       <div className="wrapper-legacy">
+        <video
+          ref={legacyVideoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleLegacyVideoError}
+        >
+          <source src="/videos/legacy.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={legacyFallbackRef} className="bg-fallback" />
         <div className="overlay">
           <div>
             <p>Um legado que inspira o futuro</p>
@@ -144,7 +201,8 @@ export default function HomePage() {
           modules={[Autoplay]}
           slidesPerView={2}
           spaceBetween={30}
-          autoplay={{ delay: 3000 }}
+          loop={true}
+          autoplay={{ delay: 2000 }}
           breakpoints={{
             640: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },

@@ -1,7 +1,19 @@
 import Header from "@/components/Header";
 import "../../styles/components/Services.css";
+import { useRef } from "react";
 
 export default function Servicos() {
+  const legalizationFallbackRef = useRef<HTMLDivElement>(null);
+  const legalizationVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handleLegalizationVideoError: React.ReactEventHandler<
+    HTMLVideoElement
+  > = () => {
+    if (legalizationVideoRef.current)
+      legalizationVideoRef.current.style.display = "none";
+    if (legalizationFallbackRef.current)
+      legalizationFallbackRef.current.style.display = "block";
+  };
   return (
     <div className="main-services">
       <div className="wrapper-one-services">
@@ -64,6 +76,19 @@ export default function Servicos() {
         <img src="/SVG/imageAcquisition.svg" alt="project" />
       </div>
       <div className="wrapper-legalization">
+        <video
+          ref={legalizationVideoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleLegalizationVideoError}
+        >
+          <source src="/videos/legalization-background.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={legalizationFallbackRef} className="bg-fallback" />
         <div className="overlay-legalization">
           <div>
             <p>Legalização e estruturação</p>
