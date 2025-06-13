@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import "../../styles/components/Services.css";
 import { useRef } from "react";
