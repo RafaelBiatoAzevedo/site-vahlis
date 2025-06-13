@@ -3,26 +3,40 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  background-image: url('/images/image-top-services.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 100%;
   height: 800px;
   overflow: hidden;
 }
 
+.wrapper-one-services .bg-video,
+.wrapper-one-services .bg-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.wrapper-one-services .bg-fallback {
+  display: none;
+  background-image: url('/images/image-top-services.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .wrapper-one-services .overlay-top-services {
-  display: flex;
+   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.9) 1%,
-    rgba(0, 0, 0, 0.0) 13%, 
-     rgba(0, 0, 0, 0.0) 40%,
+    rgba(0, 0, 0, 0.7) 0%,
+     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0.9) 100%
     );
    z-index: 1;
@@ -161,7 +175,7 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 400px;
+  height: 500px;
   padding: 5rem;
   color: white;
   overflow: hidden;
@@ -212,7 +226,7 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 400px;
+  height: 500px;
   padding: 5rem;
   color: white;
   overflow: hidden;

@@ -9,7 +9,7 @@ import Counter from "@/components/Counter";
 import Image from "next/image";
 import Header from "@/components/Header";
 import ArrowRightIcon from "@/components/ArrowRight";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const messages = [
   {
@@ -56,14 +56,15 @@ const enterprisesItems = [
 ];
 
 export default function HomePage() {
-  const fallbackRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const legacyFallbackRef = useRef<HTMLDivElement>(null);
   const legacyVideoRef = useRef<HTMLVideoElement>(null);
+  const mainVideoRef = useRef<HTMLVideoElement>(null);
+  const mainFallbackRef = useRef<HTMLDivElement>(null);
 
-  const handleVideoError: React.ReactEventHandler<HTMLVideoElement> = () => {
-    if (videoRef.current) videoRef.current.style.display = "none";
-    if (fallbackRef.current) fallbackRef.current.style.display = "block";
+  const handleMainVideoError = () => {
+    if (mainVideoRef.current) mainVideoRef.current.style.display = "none";
+    if (mainFallbackRef.current)
+      mainFallbackRef.current.style.display = "block";
   };
 
   const handleLegacyVideoError: React.ReactEventHandler<
@@ -74,22 +75,61 @@ export default function HomePage() {
       legacyFallbackRef.current.style.display = "block";
   };
 
+  const qualityRef = useRef<HTMLDivElement>(null);
+  const [triggered, setTriggered] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!qualityRef.current) return;
+      const top = qualityRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight * 0.75) {
+        setTriggered(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const section = entry.target;
+        if (entry.isIntersecting) {
+          section.classList.add("animate-project");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.querySelector(".wrapper-project");
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
+
   return (
     <div className="main-home">
       <div className="wrapper-one">
         <video
-          ref={videoRef}
+          ref={mainVideoRef}
           className="bg-video"
           autoPlay
           muted
           loop
           playsInline
-          onError={handleVideoError}
+          onError={handleMainVideoError}
         >
           <source src="/videos/home.mp4" type="video/mp4" />
         </video>
 
-        <div ref={fallbackRef} className="bg-fallback" />
+        <div ref={mainFallbackRef} className="bg-fallback" />
 
         <div className="overlay-top">
           <Header />
@@ -161,11 +201,12 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="wrapper-quality">
+      <div ref={qualityRef} className="wrapper-quality">
         <p>Nosso compromisso com</p>
         <p>padrões de qualidade</p>
       </div>
-      <div className="wrapper-project">
+
+      <div className={`wrapper-project ${triggered ? "animate-project" : ""}`}>
         <p>Eleva cada projeto</p>
         <p>a um novo patamar</p>
       </div>

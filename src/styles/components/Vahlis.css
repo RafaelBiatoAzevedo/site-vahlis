@@ -3,13 +3,28 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.wrapper-one-vahlis .bg-video,
+.wrapper-one-vahlis .bg-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.wrapper-one-vahlis .bg-fallback {
+  display: none;
   background-image: url('/images/image-top-vahlis.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 800px;
-  overflow: hidden;
 }
 
 .wrapper-one-vahlis .overlay-top-vahlis {
@@ -20,9 +35,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.9) 1%,
-    rgba(0, 0, 0, 0.0) 13%, 
-     rgba(0, 0, 0, 0.0) 40%,
+    rgba(0, 0, 0, 0.7) 0%,
+     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0.9) 100%
     );
    z-index: 1;
@@ -96,15 +110,30 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('/images/image-who.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 100%;
   height: 600px;
   padding: 5rem;
   color: white;
   overflow: hidden;
+}
+
+.wrapper-who .bg-video,
+.wrapper-who .bg-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.wrapper-who .bg-fallback {
+  display: none;
+  background-image: url('/images/image-who.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .wrapper-who .overlay-who {
@@ -127,11 +156,18 @@
   padding-bottom: 4rem;
 }
 
- .wrapper-who > .overlay-who > div > div > div > p:first-child {
-  font-size: 2.4rem;
+.wrapper-who > .overlay-who > div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+ }
+
+ .wrapper-who > .overlay-who > div > div > div > p {
+  font-size: 2.2rem;
   color: #FFFFFF;
   font-weight: 400;
-  margin-bottom: 1rem;
 }
 
  .wrapper-who > .overlay-who > div > div > p {
@@ -165,31 +201,37 @@
   padding-bottom: 4rem;
   position: absolute;
   padding:  0px 5rem;
-  top: -24px;
+  top: -30px;
 }
 
 .wrapper-mission > div:first-child > div {
   border: solid 1px #000000;
-  padding: 4.4rem 1.8rem ;
+  padding: 5rem 1.8rem ;
   border-radius: 1.6rem;
   background-color: #ffffff;
   z-index: 2;
 }
 
-.wrapper-mission > div:first-child > div > div > p:first-child {
-  font-size: 2.4rem;
-  color: #000000;
-  font-weight: 400;
+.wrapper-mission > div:first-child > div > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
+.wrapper-mission > div:first-child > div > div > p {
+  font-size: 2.2rem;
+  color: #000000;
+  font-weight: 400;
+}
+
 .wrapper-mission > div:first-child > div > p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #000000;
   font-weight: 200;
 }
 
-.wrapper-timeline-one ,
+.wrapper-timeline-one,
 .wrapper-timeline-two,
 .wrapper-timeline-three {
   display: flex;
@@ -218,9 +260,48 @@
 .wrapper-timeline-one > div > div,
 .wrapper-timeline-two > div > div,
 .wrapper-timeline-three > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  border: solid red;
+
 }
+
+.wrapper-timeline-one > div > div > div,
+.wrapper-timeline-two > div > div > div,
+.wrapper-timeline-three > div > div > div {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 1rem;
+}
+
+.wrapper-timeline-one > div > div > div > div:first-child,
+.wrapper-timeline-two > div > div > div > div:first-child,
+.wrapper-timeline-three > div > div > div > div:first-child {
+  padding: 0.6rem;
+}
+
+.wrapper-timeline-one > div > div > div > div:last-child > p,
+.wrapper-timeline-two > div > div > div > div:last-child > p,
+.wrapper-timeline-three > div > div > div > div:last-child > p {
+  color: #000000;
+  font-weight: 200;
+}
+
+.wrapper-timeline-one > div > div > div > div:last-child > p:first-child,
+.wrapper-timeline-two > div > div > div > div:last-child > p:first-child,
+.wrapper-timeline-three > div > div > div > div:last-child > p:first-child{
+  color: #000000;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
 
  

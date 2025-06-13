@@ -20,3 +20,13 @@
   font-size: 1.3rem;
   font-weight: 200;
 }
+
+.nav-menu p {
+  cursor: pointer;
+  font-weight: 200;
+  transition: font-weight 0.3s ease;
+}
+
+.nav-menu p.active {
+  font-weight: 500;
+}

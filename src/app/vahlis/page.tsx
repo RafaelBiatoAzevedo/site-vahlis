@@ -2,11 +2,41 @@
 
 import Header from "@/components/Header";
 import "../../styles/components/Vahlis.css";
+import { useRef } from "react";
+import Image from "next/image";
 
 export default function Vahlis() {
+  const whoVideoRef = useRef<HTMLVideoElement>(null);
+  const whoFallbackRef = useRef<HTMLDivElement>(null);
+  const vahlisVideoRef = useRef<HTMLVideoElement>(null);
+  const vahlisFallbackRef = useRef<HTMLDivElement>(null);
+
+  const handleWhoVideoError = () => {
+    if (whoVideoRef.current) whoVideoRef.current.style.display = "none";
+    if (whoFallbackRef.current) whoFallbackRef.current.style.display = "block";
+  };
+
+  const handleVahlisVideoError = () => {
+    if (vahlisVideoRef.current) vahlisVideoRef.current.style.display = "none";
+    if (vahlisFallbackRef.current)
+      vahlisFallbackRef.current.style.display = "block";
+  };
   return (
     <div className="main-vahlis">
       <div className="wrapper-one-vahlis">
+        <video
+          ref={vahlisVideoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleVahlisVideoError}
+        >
+          <source src="/videos/vahlis.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={vahlisFallbackRef} className="bg-fallback" />
         <div className="overlay-top-vahlis">
           <Header />
           <div>
@@ -50,10 +80,24 @@ export default function Vahlis() {
         </div>
       </div>
       <div className="wrapper-who">
+        <video
+          ref={whoVideoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleWhoVideoError}
+        >
+          <source src="/videos/who.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={whoFallbackRef} className="bg-fallback" />
         <div className="overlay-who">
           <div>
             <div>
               <div>
+                <Image src="/icons/who.png" alt="icon" width={30} height={30} />
                 <p>Quem somos?</p>
               </div>
               <p>Somos uma Incorporadora de</p>
@@ -64,6 +108,12 @@ export default function Vahlis() {
             </div>
             <div>
               <div>
+                <Image
+                  src="/icons/make.png"
+                  alt="icon"
+                  width={30}
+                  height={30}
+                />
                 <p>O que fazemos?</p>
               </div>
               <p>Projetamos empreendimentos de</p>
@@ -75,6 +125,7 @@ export default function Vahlis() {
             </div>
             <div>
               <div>
+                <Image src="/icons/why.png" alt="icon" width={30} height={30} />
                 <p>Por que fazemos?</p>
               </div>
               <p>Nosso propósito é entregar mais</p>
@@ -89,6 +140,12 @@ export default function Vahlis() {
         <div>
           <div>
             <div>
+              <Image
+                src="/icons/mission.png"
+                alt="icon"
+                width={30}
+                height={30}
+              />
               <p>Missão</p>
             </div>
             <p>Oferecer não só um</p>
@@ -98,6 +155,12 @@ export default function Vahlis() {
           </div>
           <div>
             <div>
+              <Image
+                src="/icons/vision.png"
+                alt="icon"
+                width={30}
+                height={35}
+              />
               <p>Visão</p>
             </div>
             <p>Tornar-se uma das maiores</p>
@@ -107,6 +170,12 @@ export default function Vahlis() {
           </div>
           <div>
             <div>
+              <Image
+                src="/icons/values.png"
+                alt="icon"
+                width={30}
+                height={30}
+              />
               <p>Valores</p>
             </div>
             <p>Excelência, responsabilidade</p>
@@ -122,20 +191,219 @@ export default function Vahlis() {
       <div className="wrapper-timeline-one">
         <div>
           <div>
-            <p>TEste</p>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1929</p>
+                <p>
+                  Santos Vahlis chegou ao Brasil e rapidamente se destacou como
+                  o "tubarão dos negócios imobiliários".
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1933</p>
+                <p>
+                  Deu início à história de um império no setor de incorporação e
+                  venda de imóveis, inicialmente conhecido como Zatecas.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1940</p>
+                <p>
+                  Santos Vahlis casou-se com Dona Helena, que mais tarde
+                  tornou-se a fundadora da renomada marca suíça de relógios
+                  Swatch Swiss.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1942</p>
+                <p>
+                  Ganha notoriedade ao divulgar suas publicidades nos jornais da
+                  antiga capital.
+                </p>
+              </div>
+            </div>
           </div>
           <img src="/images/image-timeline-one.jpg" alt="timeline" />
         </div>
       </div>
       <div className="wrapper-timeline-two">
         <div>
-          <div></div>
+          <div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1950</p>
+                <p>
+                  Santos Vahlis testemunhou um boom de vendas nos edifícios
+                  Itapemirim, Arosa e Sandy, consolidando sua reputação como um
+                  vendedor nato de apartamentos.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1955</p>
+                <p>
+                  Contribuiu significativamente com o desenvolvimento da
+                  sociedade, realizando diversas doações para o acervo de obras
+                  do MASP, como o quadro “Francisco de Zurbarán” e “Menina com
+                  as Espigas”
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1979</p>
+                <p>
+                  No dia 19 de janeiro de 1979, aos 74 anos, morre Santos
+                  Vahlis. Deixando uma das maiores fortunas do Brasil.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>1990</p>
+                <p>
+                  Dona Helena Vahlis assume a liderança, e após seu falecimento
+                  parte da fortuna foi destinada a instituições de caridade e
+                  proteção aos animais, perpetuando seu legado de generosidade e
+                  amor pelos seres vivos.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <img src="/images/image-timeline-two.jpg" alt="timeline" />
         </div>
       </div>
       <div className="wrapper-timeline-three">
         <div>
-          <div></div>
+          <div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>2002</p>
+                <p>
+                  Daniel dos Santos Vahlis assume a Incorporadora, e decide
+                  perpetuar o legado deixado por seus pais, mas com um olhar
+                  visionário sobre o futuro da marca.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>2018</p>
+                <p>
+                  Rebranding da marca, que inclui a alteração do nome da empresa
+                  familiar para Vahlis Incorporadora.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src="/SVG/icons/pointTimeline.svg"
+                  alt="icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div>
+                <p>2023</p>
+                <p>
+                  Hoje o digital é parte essencial da nossa evolução. É o início
+                  de um novo capítulo em que trabalhamos com mais inovação,
+                  inteligência de mercado e excelência em cada projeto. Um
+                  movimento estratégico que reforça nossos 90 anos de história e
+                  projeta a Vahlis para o futuro.
+                </p>
+              </div>
+            </div>
+          </div>
           <img src="/images/image-timeline-three.jpg" alt="timeline" />
         </div>
       </div>

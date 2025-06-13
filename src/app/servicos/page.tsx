@@ -8,6 +8,16 @@ export default function Servicos() {
   const legalizationFallbackRef = useRef<HTMLDivElement>(null);
   const legalizationVideoRef = useRef<HTMLVideoElement>(null);
 
+  const servicesVideoRef = useRef<HTMLVideoElement>(null);
+  const servicesFallbackRef = useRef<HTMLDivElement>(null);
+
+  const handleServicesVideoError = () => {
+    if (servicesVideoRef.current)
+      servicesVideoRef.current.style.display = "none";
+    if (servicesFallbackRef.current)
+      servicesFallbackRef.current.style.display = "block";
+  };
+
   const handleLegalizationVideoError: React.ReactEventHandler<
     HTMLVideoElement
   > = () => {
@@ -19,6 +29,19 @@ export default function Servicos() {
   return (
     <div className="main-services">
       <div className="wrapper-one-services">
+        <video
+          ref={servicesVideoRef}
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={handleServicesVideoError}
+        >
+          <source src="/videos/services.mp4" type="video/mp4" />
+        </video>
+
+        <div ref={servicesFallbackRef} className="bg-fallback" />
         <div className="overlay-top-services">
           <Header />
           <div>
@@ -87,7 +110,7 @@ export default function Servicos() {
           playsInline
           onError={handleLegalizationVideoError}
         >
-          <source src="/videos/legalization-background.mp4" type="video/mp4" />
+          <source src="/videos/legalization.mp4" type="video/mp4" />
         </video>
 
         <div ref={legalizationFallbackRef} className="bg-fallback" />
