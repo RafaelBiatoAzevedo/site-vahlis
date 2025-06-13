@@ -284,7 +284,7 @@ export default function HomePage() {
               <div className="testimonial-slide">
                 <p>{item.title}</p>
                 <div className="divisor-line"></div>
-                <p>{item.message}</p>
+                <p dangerouslySetInnerHTML={{ __html: item.message }} />
               </div>
             </SwiperSlide>
           ))}
