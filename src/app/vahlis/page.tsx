@@ -203,8 +203,8 @@ export default function Vahlis() {
               <div>
                 <p>1929</p>
                 <p>
-                  Santos Vahlis chegou ao Brasil e rapidamente se destacou como
-                  o "tubarão dos negócios imobiliários".
+                  'Santos Vahlis chegou ao Brasil e rapidamente se destacou como
+                  o "tubarão dos negócios imobiliários"'.
                 </p>
               </div>
             </div>
