@@ -5,6 +5,64 @@ import "../../styles/components/Vahlis.css";
 import { useRef } from "react";
 import Image from "next/image";
 
+const TIMELINE = [
+  {
+    date: "1929",
+    message:
+      ' Santos Vahlis chegou ao Brasil e rapidamente se destacou como o "tubarão dos negócios imobiliários."',
+  },
+  {
+    date: "1933",
+    message:
+      "Deu início à história de um império no setor de incorporação e venda de imóveis, inicialmente conhecido como Zatecas.",
+  },
+  {
+    date: "1940",
+    message:
+      "Santos Vahlis casou-se com Dona Helena, que mais tarde tornou-se a fundadora da renomada marca suíça de relógios Swatch Swiss.",
+  },
+  {
+    date: "1942",
+    message:
+      "Ganha notoriedade ao divulgar suas publicidades nos jornais da antiga capital.",
+  },
+  {
+    date: "1950",
+    message:
+      "Santos Vahlis testemunhou um boom de vendas nos edifícios Itapemirim, Arosa e Sandy, consolidando sua reputação como um vendedor nato de apartamentos.",
+  },
+  {
+    date: "1955",
+    message:
+      '"Contribuiu significativamente com o desenvolvimento da sociedade, realizando diversas doações para o acervo de obras do MASP, como o quadro “Francisco de Zurbarán” e “Menina com as Espigas”',
+  },
+  {
+    date: "1979",
+    message:
+      "No dia 19 de janeiro de 1979, aos 74 anos, morre Santos Vahlis. Deixando uma das maiores fortunas do Brasil.",
+  },
+  {
+    date: "1990",
+    message:
+      "Dona Helena Vahlis assume a liderança, e após seu falecimento parte da fortuna foi destinada a instituições de caridade e proteção aos animais, perpetuando seu legado de generosidade e amor pelos seres vivos.",
+  },
+  {
+    date: "2002",
+    message:
+      "Daniel dos Santos Vahlis assume a Incorporadora, e decide perpetuar o legado deixado por seus pais, mas com um olhar visionário sobre o futuro da marca.",
+  },
+  {
+    date: "2018",
+    message:
+      "Rebranding da marca, que inclui a alteração do nome da empresa familiar para Vahlis Incorporadora.",
+  },
+  {
+    date: "2023",
+    message:
+      "Hoje o digital é parte essencial da nossa evolução. É o início de um novo capítulo em que trabalhamos com mais inovação, inteligência de mercado e excelência em cada projeto. Um movimento estratégico que reforça nossos 90 anos de história e projeta a Vahlis para o futuro.",
+  },
+];
+
 export default function Vahlis() {
   const whoVideoRef = useRef<HTMLVideoElement>(null);
   const whoFallbackRef = useRef<HTMLDivElement>(null);
@@ -191,220 +249,25 @@ export default function Vahlis() {
       <div className="wrapper-timeline-one">
         <div>
           <div>
-            <div>
+            {TIMELINE.map((line) => (
               <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
+                <div>
+                  <Image
+                    src="/SVG/icons/pointTimeline.svg"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div>
+                  <p>{line.date}</p>
+                  <p>{line.message}</p>
+                </div>
               </div>
-              <div>
-                <p>1929</p>
-                <p>
-                  &apos;Santos Vahlis chegou ao Brasil e rapidamente se destacou
-                  como o &quot;tubarão dos negócios imobiliários&quot;&apos;.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1933</p>
-                <p>
-                  Deu início à história de um império no setor de incorporação e
-                  venda de imóveis, inicialmente conhecido como Zatecas.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1940</p>
-                <p>
-                  Santos Vahlis casou-se com Dona Helena, que mais tarde
-                  tornou-se a fundadora da renomada marca suíça de relógios
-                  Swatch Swiss.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1942</p>
-                <p>
-                  Ganha notoriedade ao divulgar suas publicidades nos jornais da
-                  antiga capital.
-                </p>
-              </div>
-            </div>
-          </div>
-          <img src="/images/image-timeline-one.jpg" alt="timeline" />
-        </div>
-      </div>
-      <div className="wrapper-timeline-two">
-        <div>
-          <div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1950</p>
-                <p>
-                  Santos Vahlis testemunhou um boom de vendas nos edifícios
-                  Itapemirim, Arosa e Sandy, consolidando sua reputação como um
-                  vendedor nato de apartamentos.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1955</p>
-                <p>
-                  Contribuiu significativamente com o desenvolvimento da
-                  sociedade, realizando diversas doações para o acervo de obras
-                  do MASP, como o quadro “Francisco de Zurbarán” e “Menina com
-                  as Espigas”
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1979</p>
-                <p>
-                  No dia 19 de janeiro de 1979, aos 74 anos, morre Santos
-                  Vahlis. Deixando uma das maiores fortunas do Brasil.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>1990</p>
-                <p>
-                  Dona Helena Vahlis assume a liderança, e após seu falecimento
-                  parte da fortuna foi destinada a instituições de caridade e
-                  proteção aos animais, perpetuando seu legado de generosidade e
-                  amor pelos seres vivos.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <img src="/images/image-timeline-two.jpg" alt="timeline" />
-        </div>
-      </div>
-      <div className="wrapper-timeline-three">
-        <div>
-          <div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>2002</p>
-                <p>
-                  Daniel dos Santos Vahlis assume a Incorporadora, e decide
-                  perpetuar o legado deixado por seus pais, mas com um olhar
-                  visionário sobre o futuro da marca.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>2018</p>
-                <p>
-                  Rebranding da marca, que inclui a alteração do nome da empresa
-                  familiar para Vahlis Incorporadora.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image
-                  src="/SVG/icons/pointTimeline.svg"
-                  alt="icon"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div>
-                <p>2023</p>
-                <p>
-                  Hoje o digital é parte essencial da nossa evolução. É o início
-                  de um novo capítulo em que trabalhamos com mais inovação,
-                  inteligência de mercado e excelência em cada projeto. Um
-                  movimento estratégico que reforça nossos 90 anos de história e
-                  projeta a Vahlis para o futuro.
-                </p>
-              </div>
-            </div>
-          </div>
-          <img src="/images/image-timeline-three.jpg" alt="timeline" />
+          <img src="/images/image-timeline-one.jpg" alt="timeline" />
         </div>
       </div>
     </div>
