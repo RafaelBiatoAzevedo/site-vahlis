@@ -206,10 +206,11 @@
 
 .wrapper-mission > div:first-child > div {
   border: solid 1px #000000;
-  padding: 5rem 1.8rem ;
+  padding: 5rem 1.8rem;
   border-radius: 1.6rem;
   background-color: #ffffff;
   z-index: 2;
+  box-shadow: inset 0 36px 20px -15px rgba(0,0,0,0.74);
 }
 
 .wrapper-mission > div:first-child > div > div {

@@ -86,7 +86,7 @@ export default function HomePage() {
 
   const { ref, hasAnimated } = useInViewCounters(0.2);
   const { ref: legacyRef, isVisible } = useInView(0.3, true);
-  const projectRef = useRef<HTMLElement | null>(null);
+  const projectRef = useRef<HTMLDivElement | null>(null);
   const progress = useScrollProgress(projectRef);
 
   return (
@@ -129,7 +129,7 @@ export default function HomePage() {
           src="/SVG/vector.svg"
           alt="Logo"
           width={800}
-          height={400}
+          height={500}
         />
       </div>
       <div className="wrapper-invest">
@@ -143,6 +143,7 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+
       <div className="wrapper-legacy">
         <video
           ref={legacyVideoRef}
