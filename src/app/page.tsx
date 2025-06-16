@@ -9,7 +9,10 @@ import Counter from "@/components/Counter";
 import Image from "next/image";
 import Header from "@/components/Header";
 import ArrowRightIcon from "@/components/ArrowRight";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import useInView from "@/hooks/useInView";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
+import useInViewCounters from "@/hooks/useInViewCounters";
 
 const messages = [
   {
@@ -51,14 +54,14 @@ const messages = [
 ];
 
 const enterprisesItems = [
-  { iconPath: "/SVG/texasLogo.svg", label: "Texas" },
-  { iconPath: "/SVG/scaeLogo.svg", label: "Scae" },
-  { iconPath: "/SVG/santosVahlisLogo.svg", label: "Santos Vahlis" },
-  { iconPath: "/SVG/ciaRodeioLogo.svg", label: "Cia Rodeo" },
-  { iconPath: "/SVG/texasLogo.svg", label: "Texas" },
-  { iconPath: "/SVG/scaeLogo.svg", label: "Scae" },
-  { iconPath: "/SVG/santosVahlisLogo.svg", label: "Santos Vahlis" },
-  { iconPath: "/SVG/ciaRodeioLogo.svg", label: "Cia Rodeo" },
+  { iconPath: "/logos/globalPayLogo.png", label: "Texas" },
+  { iconPath: "/logos/essenzaLogo.png", label: "Scae" },
+  { iconPath: "/logos/santosVahlisLogo.svg", label: "Santos Vahlis" },
+  { iconPath: "/logos/belaVistaLogo.png", label: "Cia Rodeo" },
+  { iconPath: "/logos/texasLogo.svg", label: "Texas" },
+  { iconPath: "/logos/scaeLogo.png", label: "Scae" },
+  { iconPath: "/logos/ticketFireLogo.png", label: "Santos Vahlis" },
+  { iconPath: "/logos/senddLogo.png", label: "Cia Rodeo" },
 ];
 
 export default function HomePage() {
@@ -81,44 +84,10 @@ export default function HomePage() {
       legacyFallbackRef.current.style.display = "block";
   };
 
-  const qualityRef = useRef<HTMLDivElement>(null);
-  const [triggered, setTriggered] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!qualityRef.current) return;
-      const top = qualityRef.current.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (top < windowHeight * 0.75) {
-        setTriggered(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const section = entry.target;
-        if (entry.isIntersecting) {
-          section.classList.add("animate-project");
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = document.querySelector(".wrapper-project");
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
+  const { ref, hasAnimated } = useInViewCounters(0.2);
+  const { ref: legacyRef, isVisible } = useInView(0.3, true);
+  const projectRef = useRef<HTMLElement | null>(null);
+  const progress = useScrollProgress(projectRef);
 
   return (
     <div className="main-home">
@@ -148,7 +117,7 @@ export default function HomePage() {
       </div>
       <div className="wrapper-two">
         <div>
-          <p style={{ fontFamily: "var(--font-playfair)" }}>“</p>
+          <p>“</p>
           <p>Damos início a narrativas</p>
           <p>duradouras que</p>
           <p>transcendem gerações</p>
@@ -164,13 +133,15 @@ export default function HomePage() {
         />
       </div>
       <div className="wrapper-invest">
-        <p>Desenvolvemos espaços</p>
-        <p>
-          que valorizam quem <b>vive</b>
-        </p>
-        <p>
-          e quem <b>investe.</b>
-        </p>
+        <div className="overlay-invest">
+          <p>Desenvolvemos espaços</p>
+          <p>
+            que valorizam quem <b>vive</b>
+          </p>
+          <p>
+            e quem <b>investe.</b>
+          </p>
+        </div>
       </div>
       <div className="wrapper-legacy">
         <video
@@ -186,8 +157,17 @@ export default function HomePage() {
         </video>
 
         <div ref={legacyFallbackRef} className="bg-fallback" />
+
         <div className="overlay">
-          <div>
+          <div
+            className={`overlay-content ${isVisible ? "animate-project" : ""}`}
+            ref={legacyRef}
+            style={{
+              transform: isVisible ? "translateY(-50px)" : "translateY(0)",
+              opacity: isVisible ? 1 : 0,
+              transition: "transform 1s ease-out, opacity 1s ease-out",
+            }}
+          >
             <p>Um legado que inspira o futuro</p>
             <div>
               <p>Desde 1933, a Vahlis transforma lugares com</p>
@@ -207,16 +187,55 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div ref={qualityRef} className="wrapper-quality">
-        <p>Nosso compromisso com</p>
-        <p>padrões de qualidade</p>
-      </div>
 
-      <div className={`wrapper-project ${triggered ? "animate-project" : ""}`}>
-        <p>Eleva cada projeto</p>
-        <p>a um novo patamar</p>
+      <div className="wrapper-quality" ref={projectRef}>
+        <p
+          style={{
+            transform: `translateY(-${120 * progress}px)`,
+            transition: "transform 0.1s ease-out",
+          }}
+        >
+          Nosso compromisso com
+        </p>
+        <p
+          style={{
+            transform: `translateY(-${120 * progress}px)`,
+            transition: "transform 0.1s ease-out",
+          }}
+        >
+          padrões de qualidade
+        </p>
+
+        <div
+          className="wrapper-project"
+          style={{
+            width: `${progress * 100}%`,
+            height: `${progress * 160}%`,
+            transform: `translate(-50%, -50%)`,
+            transition: "width 0.2s ease-out, height 0.2s ease-out",
+          }}
+        >
+          <p
+            style={{
+              fontSize: `${1 + 2.4 * progress}rem`, // 1rem → 3.4rem
+              transform: `translateY(-${180 * progress}px)`, // sobe no máximo 40px
+              transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
+            }}
+          >
+            Eleva cada projeto
+          </p>
+          <p
+            style={{
+              fontSize: `${1 + 2.4 * progress}rem`,
+              transform: `translateY(-${180 * progress}px)`,
+              transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
+            }}
+          >
+            a um novo patamar
+          </p>
+        </div>
       </div>
-      <div className="wrapper-data">
+      <div className={`wrapper-data`} ref={ref}>
         <div className="image-wrapper-rect">
           <img
             src="/images/imageData.jpg"
@@ -226,19 +245,13 @@ export default function HomePage() {
         </div>
 
         <div>
-          <p>
-            <Counter end={90} duration={1000} />+
-          </p>
+          <p>{hasAnimated && <Counter end={90} duration={1000} />}+</p>
           <p>Anos de atuação</p>
 
-          <p>
-            <Counter end={100} duration={1000} />%
-          </p>
+          <p>{hasAnimated && <Counter end={100} duration={1000} />}%</p>
           <p>De satisfação</p>
 
-          <p>
-            <Counter end={200} duration={1000} />+
-          </p>
+          <p>{hasAnimated && <Counter end={200} duration={1000} />}+</p>
           <p>Prédios entregues</p>
         </div>
       </div>
