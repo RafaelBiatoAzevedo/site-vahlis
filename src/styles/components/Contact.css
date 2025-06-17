@@ -32,9 +32,9 @@
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 360px) {
   .main-contact {
-    min-height: 250px;
+    min-height: 200px;
   }
 
   .main-contact > div > p {

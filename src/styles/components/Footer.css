@@ -105,7 +105,37 @@
 
   .wrapper-info-footer > div:first-of-type p:not(:first-of-type),
   .wrapper-info-footer > p:first-of-type, .main-footer > p:last-child  {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+  }
+
+  .main-footer > div:first-child {
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0px;
+  }
+
+  .main-footer > div:first-child > button {
+    display: none;
+  }
+
+  .wrapper-info-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .wrapper-info-footer > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wrapper-info-footer > div:last-child {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
   }
 }
 
