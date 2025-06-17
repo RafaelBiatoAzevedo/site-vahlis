@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import "../../styles/components/Vahlis.css";
 import { useRef } from "react";
 import Image from "next/image";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const TIMELINE = [
   {
@@ -64,6 +65,7 @@ const TIMELINE = [
 ];
 
 export default function Vahlis() {
+  const { width } = useWindowSize();
   const whoVideoRef = useRef<HTMLVideoElement>(null);
   const whoFallbackRef = useRef<HTMLDivElement>(null);
   const vahlisVideoRef = useRef<HTMLVideoElement>(null);
@@ -79,6 +81,7 @@ export default function Vahlis() {
     if (vahlisFallbackRef.current)
       vahlisFallbackRef.current.style.display = "block";
   };
+
   return (
     <div className="main-vahlis">
       <div className="wrapper-one-vahlis">
@@ -155,7 +158,12 @@ export default function Vahlis() {
           <div>
             <div>
               <div>
-                <Image src="/icons/who.png" alt="icon" width={30} height={30} />
+                <Image
+                  src="/icons/who.png"
+                  alt="icon"
+                  width={width >= 1336 ? 30 : 24}
+                  height={width >= 1336 ? 30 : 24}
+                />
                 <p>Quem somos?</p>
               </div>
               <p>Somos uma Incorporadora de</p>
@@ -169,8 +177,8 @@ export default function Vahlis() {
                 <Image
                   src="/icons/make.png"
                   alt="icon"
-                  width={30}
-                  height={30}
+                  width={width >= 1336 ? 30 : 24}
+                  height={width >= 1336 ? 30 : 24}
                 />
                 <p>O que fazemos?</p>
               </div>
@@ -183,7 +191,12 @@ export default function Vahlis() {
             </div>
             <div>
               <div>
-                <Image src="/icons/why.png" alt="icon" width={30} height={30} />
+                <Image
+                  src="/icons/why.png"
+                  alt="icon"
+                  width={width >= 1336 ? 30 : 24}
+                  height={width >= 1336 ? 30 : 24}
+                />
                 <p>Por que fazemos?</p>
               </div>
               <p>Nosso propósito é entregar mais</p>
@@ -201,8 +214,8 @@ export default function Vahlis() {
               <Image
                 src="/icons/mission.png"
                 alt="icon"
-                width={30}
-                height={30}
+                width={width >= 1336 ? 30 : 24}
+                height={width >= 1336 ? 30 : 24}
               />
               <p>Missão</p>
             </div>
@@ -216,8 +229,8 @@ export default function Vahlis() {
               <Image
                 src="/icons/vision.png"
                 alt="icon"
-                width={30}
-                height={35}
+                width={width >= 1336 ? 30 : 24}
+                height={width >= 1336 ? 35 : 27}
               />
               <p>Visão</p>
             </div>
@@ -231,8 +244,8 @@ export default function Vahlis() {
               <Image
                 src="/icons/values.png"
                 alt="icon"
-                width={30}
-                height={30}
+                width={width >= 1336 ? 30 : 24}
+                height={width >= 1336 ? 30 : 24}
               />
               <p>Valores</p>
             </div>
@@ -255,8 +268,8 @@ export default function Vahlis() {
                   <Image
                     src="/SVG/icons/pointTimeline.svg"
                     alt="icon"
-                    width={20}
-                    height={20}
+                    width={width >= 1336 ? 20 : 16}
+                    height={width >= 1336 ? 20 : 16}
                   />
                 </div>
                 <div>

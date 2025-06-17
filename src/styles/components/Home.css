@@ -87,7 +87,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  min-height: 1000px;
+  height: 1000px;
   padding: 7rem 4rem;
   background-color: #ffffff;
 }
@@ -120,7 +120,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 .wrapper-invest > .overlay-invest > p {
@@ -239,7 +239,6 @@
   padding: 5rem;
   background-color: #ffffff;
   font-size: 3.4rem;
-  color: #000000;
   font-weight: 200;
   position: relative;
   z-index: 1;
@@ -444,14 +443,74 @@
 }
 
 @media (max-width: 900px) {
+  .wrapper-one .overlay-top {
+    padding: 0px 3rem;
+  }
+
+  .wrapper-one {
+    height: 700px;
+  }
+
+  .wrapper-one > .overlay-top > div:nth-child(2) p {
+    font-size: 1.6rem;
+  }
+
+  .wrapper-two > div:first-child > p {
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 200;
+  }
+
+  .wrapper-vector {
+    height: 600px;
+  }
+
+  .wrapper-invest {
+    height: 600px;
+  }
+
+  .wrapper-invest > .overlay-invest > p {
+    font-size: 1.6rem;
+  }
+
+  .wrapper-legacy {
+    height: 380px;
+  }
+  
+  .wrapper-legacy > .overlay  > div > p {
+    font-size: 1.2rem;
+  }
+
+  .wrapper-legacy > .overlay  > div >  div {
+    padding: 0.6rem 0px;
+  }
+
+  .wrapper-legacy > .overlay  > div >  div > p {
+    font-size: 0.8rem;
+  }
+
+ .wrapper-legacy > .overlay  > div > button {
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .wrapper-quality {
+    height: 300px;
+    padding: 3rem;
+  }
+
+  .wrapper-quality > p, .wrapper-project > p {
+    font-size:  2rem;
+  }
+
   .wrapper-data {
-    flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 3rem;
     gap: 1.5rem;
   }
 
   .wrapper-data > div:last-child {
-    width: 100%;
+    width: 20%;
     padding: 1rem 0;
   }
 
@@ -465,8 +524,23 @@
   }
 
   .image-wrapper-rect {
-    width: 100%;
+    width: 70%;
     height: auto;
+  }
+
+  .enterprise-vahlis {
+    padding: 3rem;
+  }
+
+  .enterprise-vahlis > p:first-child {
+    font-size: 1.8rem;
+  }
+  .enterprise-slide  > img {
+    width: 100px;
+  }
+
+  .say-vahlis  {
+    padding: 0px 3rem;
   }
 }
 

@@ -30,3 +30,14 @@
 .nav-menu p.active {
   font-weight: 500;
 }
+
+@media (max-width: 900px) {
+  .main {
+    padding: 1rem 0px;
+  }
+
+  .nav-menu {
+    font-size: 1rem;
+    font-weight: 200;
+  }
+}

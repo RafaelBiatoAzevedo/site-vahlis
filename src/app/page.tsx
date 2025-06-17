@@ -13,6 +13,7 @@ import { useRef } from "react";
 import useInView from "@/hooks/useInView";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import useInViewCounters from "@/hooks/useInViewCounters";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const messages = [
   {
@@ -69,6 +70,7 @@ export default function HomePage() {
   const legacyVideoRef = useRef<HTMLVideoElement>(null);
   const mainVideoRef = useRef<HTMLVideoElement>(null);
   const mainFallbackRef = useRef<HTMLDivElement>(null);
+  const { width } = useWindowSize();
 
   const handleMainVideoError = () => {
     if (mainVideoRef.current) mainVideoRef.current.style.display = "none";
@@ -128,8 +130,8 @@ export default function HomePage() {
           className="vector-image"
           src="/SVG/vector.svg"
           alt="Logo"
-          width={800}
-          height={500}
+          width={width >= 1336 ? 800 : 600}
+          height={width >= 1336 ? 500 : 300}
         />
       </div>
       <div className="wrapper-invest">
@@ -178,7 +180,7 @@ export default function HomePage() {
               <p>urbano do país.</p>
             </div>
             <button>
-              Conheça mais da Vahlis{" "}
+              Conheça mais da Vahlis
               <ArrowRightIcon
                 width={20}
                 height={20}
@@ -218,7 +220,7 @@ export default function HomePage() {
         >
           <p
             style={{
-              fontSize: `${1 + 2.4 * progress}rem`, // 1rem → 3.4rem
+              fontSize: `${1 + width ? 2.4 : 1 * progress}rem`, // 1rem → 3.4rem
               transform: `translateY(-${180 * progress}px)`, // sobe no máximo 40px
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}
@@ -227,7 +229,7 @@ export default function HomePage() {
           </p>
           <p
             style={{
-              fontSize: `${1 + 2.4 * progress}rem`,
+              fontSize: `${1 + width ? 2.4 : 1 * progress}rem`,
               transform: `translateY(-${180 * progress}px)`,
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}

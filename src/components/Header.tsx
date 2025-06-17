@@ -5,6 +5,7 @@ import ButtonContact from "./ButtonContact";
 import "../styles/components/Header.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const menuItems = [
   { href: "/", label: "Inicio" },
@@ -18,10 +19,16 @@ type HeaderProps = {
 
 export default function Header({ absolute }: HeaderProps) {
   const pathname = usePathname();
+  const { width } = useWindowSize();
 
   return (
     <div className={`main ${absolute ? "header-absolute" : ""}`}>
-      <Image src="/SVG/vahlisLogo.svg" alt="Logo" width={120} height={40} />
+      <Image
+        src="/SVG/vahlisLogo.svg"
+        alt="Logo"
+        width={width > 600 ? 120 : 80}
+        height={width > 600 ? 40 : 30}
+      />
       <nav className="nav-menu">
         {menuItems.map((item) => {
           const isActive = pathname === item.href;

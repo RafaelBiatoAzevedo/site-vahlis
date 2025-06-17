@@ -1,7 +1,9 @@
+"use client";
 import Header from "./Header";
 import "../styles/components/Footer.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const linkItems = [
   { href: "/", iconPath: "/SVG/icons/facebookIcon.svg", label: "Facebook" },
@@ -10,6 +12,8 @@ const linkItems = [
 ];
 
 export default function Footer() {
+  const { width } = useWindowSize();
+
   return (
     <div className="main-footer">
       <Header></Header>
@@ -31,8 +35,8 @@ export default function Footer() {
                 <Image
                   src={item.iconPath}
                   alt={item.label}
-                  width={35}
-                  height={35}
+                  width={width >= 1336 ? 35 : 25}
+                  height={width >= 1336 ? 35 : 25}
                 />
               </Link>
             ))}
