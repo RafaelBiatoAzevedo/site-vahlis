@@ -37,8 +37,12 @@
     min-height: 200px;
   }
 
+  
+  .main-contact > div:first-child {
+    margin-bottom: 1rem;
+  }
+
   .main-contact > div > p {
     font-size: 1.1rem;
   }
-
 }

@@ -488,7 +488,7 @@
   }
 
   .wrapper-legalization > .overlay-legalization  > div >  div > p {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
   .wrapper-marketing {
@@ -506,6 +506,7 @@
 
   .wrapper-marketing > .overlay-marketing {
     padding: 0.4rem;
+    align-items: flex-end;
   }
 
   .wrapper-marketing > .overlay-marketing > div {
@@ -515,6 +516,7 @@
     justify-content: center;
     margin-left: none;
     text-align: center;
+
   }
 
   .wrapper-marketing > .overlay-marketing > div {
@@ -522,7 +524,7 @@
   }
 
   .wrapper-marketing > .overlay-marketing  > div >  div > p {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
 
