@@ -39,7 +39,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 372px) {
   .btn-small {
     font-size: 0.6rem;
     padding: 0.3rem 1.4rem;
@@ -47,8 +47,8 @@
   }
 
   .btn-medium {
-    font-size: 0.9rem;
-    padding: 0.5rem 2rem;
-    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 1.8rem;
+    border-radius: 0.4rem;
   }
 }

@@ -31,3 +31,14 @@
   }
 
 }
+
+@media (max-width: 900px) {
+  .main-contact {
+    min-height: 250px;
+  }
+
+  .main-contact > div > p {
+    font-size: 1.1rem;
+  }
+
+}
