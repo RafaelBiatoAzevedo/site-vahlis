@@ -40,6 +40,14 @@ export default function Header({ absolute }: HeaderProps) {
         })}
       </nav>
       <ButtonContact size="small" />
+      <button>
+        <Image
+          src="/SVG/icons/menuList.svg"
+          alt="Logo"
+          width={20}
+          height={20}
+        ></Image>
+      </button>
     </div>
   );
 }

@@ -41,3 +41,21 @@
     font-weight: 200;
   }
 }
+
+@media (max-width: 360px) {
+  .main {
+    padding: 0px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .main > button {
+    display: none;
+  }
+
+   .main > button:last-child {
+    display: block;
+  }
+}
