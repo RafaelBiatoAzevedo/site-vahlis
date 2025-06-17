@@ -401,13 +401,13 @@
   }
 }
 
-@media (max-width: 372px) {
+@media (max-width: 360px) {
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p:first-child {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 200;
   }
 
@@ -433,7 +433,7 @@
 
   .wrapper-legalization > .overlay-legalization > div {
    text-align: center;
-   width: 700px;
+   width: 372px;
   }
 
   .wrapper-legalization > .overlay-legalization > div > div > p {
