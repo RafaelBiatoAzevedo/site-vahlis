@@ -263,7 +263,7 @@ export default function Vahlis() {
         <div>
           <div>
             {TIMELINE.map((line) => (
-              <div>
+              <div key={line.message}>
                 <div>
                   <Image
                     src="/SVG/icons/pointTimeline.svg"
