@@ -402,13 +402,16 @@
 }
 
 @media (max-width: 360px) {
+  .wrapper-one-services .overlay-top-services {
+    padding: 1rem;
+  }
+
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p:first-child {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p {
-    font-size: 0.8rem;
-    font-weight: 200;
+    font-size: 1rem;
   }
 
   .wrapper-organization {
@@ -421,6 +424,40 @@
 
   .wrapper-organization > div > p:first-child {
     font-size: 1rem;
+  }
+
+  .wrapper-howmake > div > p:first-child {
+    font-size: 1rem;
+  }
+
+  .wrapper-analysis , .wrapper-acquisition {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .wrapper-analysis > div, .wrapper-acquisition > div {
+    padding: 3rem 1rem;
+     align-items: center;
+  }
+
+  .wrapper-analysis > div > p, .wrapper-acquisition > div > p {
+    font-size: 1rem;
+  }
+
+  .wrapper-analysis > div > div, .wrapper-acquisition > div > div  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.8rem;
+  }
+
+  .wrapper-analysis > div > div >  p, .wrapper-acquisition > div > div > p {
+    font-size: 0.8rem;
+  }
+
+  .wrapper-analysis >  img, .wrapper-acquisition > img {
+    width: 100%;
   }
 
   .wrapper-legalization {
