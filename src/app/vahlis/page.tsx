@@ -110,7 +110,9 @@ export default function Vahlis() {
         </div>
       </div>
       <div className="wrapper-history">
-        <img src="/images/image-history.jpg" alt="history" />
+        <div>
+          <img src="/images/image-history.jpg" alt="history" />
+        </div>
         <div>
           <div>
             <p>Fundada por Santos Vahlis, um dos grandes visionários do</p>
@@ -166,11 +168,13 @@ export default function Vahlis() {
                 />
                 <p>Quem somos?</p>
               </div>
-              <p>Somos uma Incorporadora de</p>
-              <p>alto padrão movida pela</p>
-              <p>responsabilidade de perpetuar</p>
-              <p>um legado e pelo desejo de</p>
-              <p>impactar vidas.</p>
+              <div>
+                <p>Somos uma Incorporadora de</p>
+                <p>alto padrão movida pela</p>
+                <p>responsabilidade de perpetuar</p>
+                <p>um legado e pelo desejo de</p>
+                <p>impactar vidas.</p>
+              </div>
             </div>
             <div>
               <div>
@@ -182,12 +186,14 @@ export default function Vahlis() {
                 />
                 <p>O que fazemos?</p>
               </div>
-              <p>Projetamos empreendimentos de</p>
-              <p>alto padrão para quem busca</p>
-              <p>exclusividade. Cada detalhe é</p>
-              <p>pensado para proporcionar</p>
-              <p>sofisticação, conforto e identidade</p>
-              <p>a quem escolhe viver em um Vahlis.</p>
+              <div>
+                <p>Projetamos empreendimentos de</p>
+                <p>alto padrão para quem busca</p>
+                <p>exclusividade. Cada detalhe é</p>
+                <p>pensado para proporcionar</p>
+                <p>sofisticação, conforto e identidade</p>
+                <p>a quem escolhe viver em um Vahlis.</p>
+              </div>
             </div>
             <div>
               <div>
@@ -199,10 +205,12 @@ export default function Vahlis() {
                 />
                 <p>Por que fazemos?</p>
               </div>
-              <p>Nosso propósito é entregar mais</p>
-              <p>do que imóveis. Queremos</p>
-              <p>proporcionar realizações pessoais </p>
-              <p>que durem uma vida inteira.</p>
+              <div>
+                <p>Nosso propósito é entregar mais</p>
+                <p>do que imóveis. Queremos</p>
+                <p>proporcionar realizações pessoais </p>
+                <p>que durem uma vida inteira.</p>
+              </div>
             </div>
           </div>
         </div>

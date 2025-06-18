@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -83,14 +83,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  height: 700px;
 }
 
-.wrapper-history > img {
-  height: 100%;
+.wrapper-history > div:first-child > img {
+  height: 700px;
 }
 
-.wrapper-history > div {
+.wrapper-history > div:last-child {
   width: 100%;
   height: 100%;
   display: flex;
@@ -99,11 +99,11 @@
   justify-content: center;
   background-color: #ffffff;
   padding: 2rem;
-  gap: 1rem
+  gap: 1rem;
 }
 
-.wrapper-history > div > div > p{
-  font-size: 1.2rem;
+.wrapper-history > div > div > p {
+  font-size: 1.6rem;
   color: #000000;
   font-weight: 200;
 }
@@ -163,17 +163,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
  }
 
- .wrapper-who > .overlay-who > div > div > div > p {
+  .wrapper-who > .overlay-who > div > div > div:first-child {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+ .wrapper-who > .overlay-who > div > div > div:last-child {
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+ }
+
+ .wrapper-who > .overlay-who > div > div > div:first-child > p {
   font-size: 2.2rem;
   color: #FFFFFF;
   font-weight: 400;
 }
 
- .wrapper-who > .overlay-who > div > div > p {
+ .wrapper-who > .overlay-who > div > div > div:last-child > p {
   font-size: 1rem;
   color: #FFFFFF;
   font-weight: 200;
@@ -317,13 +326,25 @@
 
 @media (max-width: 1336px) {
   .wrapper-one-vahlis {
-    height: 900px;
+    height: 100vh;
+  }
+
+  .wrapper-history  {
+    height: 600px;
+  }
+
+  .wrapper-history > div:first-child > img {
+    height: 600px;
+  }
+
+  .wrapper-history > div > div > p {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 900px) {
   .wrapper-one-vahlis {
-    height: 700px;
+    height: 100vh;
   }
 
   .wrapper-one-vahlis > .overlay-top-vahlis > div:nth-child(2) p:first-child {
@@ -343,20 +364,24 @@
     height: 400px;
   }
 
-  .wrapper-history > div > div > p {
-    font-size: 0.9rem;
-  }
-
-  .wrapper-who {
+  .wrapper-history > div:first-child > img {
     height: 400px;
   }
 
-  .wrapper-who > .overlay-who > div > div > div {
+  .wrapper-history > div > div > p {
+    font-size: 1rem;
+  }
+
+  .wrapper-who {
+    height: 300px;
+  }
+
+  .wrapper-who > .overlay-who > div > div > div:first-child {
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
-  .wrapper-who > .overlay-who > div > div > div > p {
+  .wrapper-who > .overlay-who > div > div > div:first-child > p {
     font-size: 1.4rem;
   }
 
@@ -364,7 +389,7 @@
     padding: 3rem;
   }
 
-  .wrapper-who > .overlay-who > div > div > p {
+  .wrapper-who > .overlay-who > div > div > div:last-child > p {
     font-size: 0.8rem;
   }
 
@@ -445,6 +470,92 @@
   .wrapper-timeline-three > div > div > div > div:last-child > p:first-child{
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper-one-vahlis {
+    height: 100vh;
+  }
+
+  .wrapper-one-vahlis .overlay-top-vahlis {
+    padding: 1rem;
+  }
+
+  .wrapper-one-vahlis .overlay-top-vahlis > div:nth-child(2) p:first-child {
+    font-size: 1.4rem;
+  }
+
+  .wrapper-one-vahlis .overlay-top-vahlis > div:nth-child(2) p {
+    font-size: 1rem;
+  }
+
+  .wrapper-history  {
+    height: 600px;
+    flex-direction: column;
+  }
+
+  .wrapper-history > div:first-child > img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .wrapper-history > div:first-child {
+    order: 2;
+  }
+
+  .wrapper-history > div:last-child {
+    padding: 1rem;
+    order: 1;
+  }
+
+  .wrapper-history > div > div > p {
+    font-size: 0.75rem;
+  }
+
+  .wrapper-who {
+    height: 600px;
+  }
+
+  .wrapper-who > .overlay-who {
+    padding: 1rem;
+  }
+
+  .wrapper-who > .overlay-who > div  {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 0rem;
+  }
+
+   .wrapper-who > .overlay-who > div {
+    align-items: center;
+    justify-content: center;
+    gap: 4rem
+   }
+
+  .wrapper-mission {
+    height: 900px;
+    padding: 1rem;
+  }
+
+  .wrapper-mission > div:first-child  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    padding: 3rem 1rem;
+    gap: 3rem
+  }
+
+  .wrapper-mission > div:first-child > div {
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 200px;
+    padding: 1.5rem;
   }
 }
 
