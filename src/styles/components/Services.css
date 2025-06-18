@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -301,7 +301,7 @@
 
 @media (max-width: 1336px) {
   .wrapper-one-services {
-    height: 900px;
+    height: 100vh;
   }
 
   .wrapper-legalization {
@@ -316,7 +316,7 @@
 
 @media (max-width: 900px) {
   .wrapper-one-services {
-    height: 700px;
+    height: 100vh;
   }
 
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p:first-child {
@@ -404,6 +404,10 @@
 }
 
 @media (max-width: 360px) {
+  .wrapper-one-services {
+    height: 100vh;
+  }
+
   .wrapper-one-services .overlay-top-services {
     padding: 1rem;
   }
