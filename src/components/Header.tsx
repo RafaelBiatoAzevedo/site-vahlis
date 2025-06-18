@@ -6,6 +6,7 @@ import "../styles/components/Header.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import MenuIcon from "./MenuIcon";
 
 const menuItems = [
   { href: "/", label: "Inicio" },
@@ -41,12 +42,7 @@ export default function Header({ absolute }: HeaderProps) {
       </nav>
       <ButtonContact size="small" />
       <button>
-        <Image
-          src="/SVG/icons/menuList.svg"
-          alt="Logo"
-          width={20}
-          height={20}
-        ></Image>
+        <MenuIcon />
       </button>
     </div>
   );
