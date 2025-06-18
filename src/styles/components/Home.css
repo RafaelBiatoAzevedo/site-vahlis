@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  height: 1000px;
+  height: 960px;
   overflow: hidden;
 }
 
@@ -56,6 +56,7 @@
 .wrapper-one > .overlay-top > div:nth-child(2) p {
   font-size: 1.8rem;
   font-weight: 200;
+  color: #ffffff;
 }
 
 .wrapper-two {
@@ -63,7 +64,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  min-height: 600px;
+  height: 600px;
   padding: 5rem;
   background-color: #ffffff;
 }
@@ -104,10 +105,8 @@
 
   width: 100%;
   height: 1000px;
-  padding: 5rem;
   color: white;
   overflow: hidden;
-
 }
 
 .wrapper-invest .overlay-invest {
@@ -120,7 +119,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 3rem;
+  padding: 5rem;
 }
 
 .wrapper-invest > .overlay-invest > p {
@@ -163,7 +162,6 @@
 .wrapper-legacy .overlay {
   position: absolute;
   inset: 0;
-  /* background: linear-gradient(270deg, rgba(0, 0, 0, 0.70) 38.94%, rgba(0, 0, 0, 0.00) 67.31%); */
   background: linear-gradient(to right, rgba(0,0,0,0) 30%, rgba(0,0,0,0.4)) 70%;
   z-index: 1;
 
@@ -183,7 +181,6 @@
   transform: translateY(-50px);
   opacity: 1;
 }
-
 
 .wrapper-legacy > .overlay > div {
   margin-left: auto;
@@ -217,15 +214,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  border: solid red;
-  text-decoration: none;
+  padding: 10px;  text-decoration: none;
   background-color: transparent;
   border: solid 1px  #CA8A2A;
   border-radius: 10px;
   padding: 0.6rem 1rem;
   font-weight: 200;
   margin-top: 2rem;
+    color: #FFFFFF;
 
   gap: 10px
 }
@@ -235,13 +231,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
   padding: 5rem;
   background-color: #ffffff;
   font-size: 3.4rem;
   font-weight: 200;
   position: relative;
   z-index: 1;
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .wrapper-project {
@@ -266,16 +266,8 @@
   transition: all 0.1s ease-out;
 }
 
-.wrapper-quality {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
-  background-color: #ffffff;
-  color: #000000;
-}
-
 .enterprise-vahlis {
-  min-height: 400px;
+  height: 400px;
   padding: 5rem;
   background-color: #ffffff;
 }
@@ -304,7 +296,7 @@
 
 .say-vahlis {
   width: 100%;
-  min-height: 500px;
+  height: 500px;
   padding: 5rem;
   background-color: #ffffff;
   padding-top: 0px;
@@ -356,7 +348,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 660px;
+  height: 860px;
   background-color: #ffffff;
   padding: 5rem;
 }
@@ -366,27 +358,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 10rem;
+  padding: 0px 8rem;
 }
 
-.wrapper-data > div:last-child > p {
- color: #000000;
+.wrapper-data > div > div > p {
+  color: #000000;
 }
 
-.wrapper-data > div:last-child p:nth-child(odd) {
- font-weight: 300;
+.wrapper-data > div > div p:nth-child(odd) {
+  font-weight: 300;
   font-size: 5rem;
+
 }
 
-.wrapper-data > div:last-child p:nth-child(even) {
+.wrapper-data > div > div p:nth-child(even) {
   font-size: 1.5rem;
   font-weight: 200;
   margin-bottom: 2rem;
 }
 
 .image-wrapper-rect {
-  width: 1000px;
-  height: 700px;
+  width: 1200px;
+  height: 720px;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
@@ -399,15 +392,15 @@
 
 @media (max-width: 1336px) {
   .wrapper-one {
-    height: 900px;
+    height: 800px;
   }
 
   .wrapper-vector {
-    height: 900px;
+    height: 800px;
   }
 
   .wrapper-invest {
-    height: 900px;
+    height: 800px;
   }
 
   .wrapper-legacy {
@@ -416,8 +409,7 @@
 
   .wrapper-data {
     flex-direction: row;
-    padding: 5rem;
-    min-height: auto;
+    height: 660;
   }
 
   .wrapper-data > div:last-child {
@@ -425,11 +417,11 @@
     width: 20%;
   }
 
-  .wrapper-data > div:last-child p:nth-child(odd) {
+  .wrapper-data > div  > div p:nth-child(odd) {
     font-size: 4rem;
   }
 
-  .wrapper-data > div:last-child p:nth-child(even) {
+  .wrapper-data > div  > div p:nth-child(even) {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
@@ -440,11 +432,16 @@
 
     aspect-ratio: 1200 / 700;
   }
+
+  .divisor-solid {
+    margin-bottom: 3rem;
+  }
 }
 
 @media (max-width: 900px) {
   .wrapper-one .overlay-top {
-    padding: 0px 3rem;
+    padding: 3rem;
+    padding-top: 0px;
   }
 
   .wrapper-one {
@@ -452,11 +449,11 @@
   }
 
   .wrapper-one > .overlay-top > div:nth-child(2) p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .wrapper-two > div:first-child > p {
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: #000000;
     font-weight: 200;
   }
@@ -469,8 +466,12 @@
     height: 600px;
   }
 
+  .wrapper-invest > .overlay-invest {
+    padding: 3rem;
+  }
+
   .wrapper-invest > .overlay-invest > p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .wrapper-legacy {
@@ -497,7 +498,6 @@
 
   .wrapper-quality {
     height: 300px;
-    padding: 3rem;
   }
 
   .wrapper-quality > p, .wrapper-project > p {
@@ -507,40 +507,212 @@
   .wrapper-data {
     padding: 3rem;
     gap: 1.5rem;
+    height: 450px;
   }
 
   .wrapper-data > div:last-child {
     width: 20%;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
-  .wrapper-data > div:last-child p:nth-child(odd) {
-    font-size: 2.5rem;
+  .wrapper-data > div > div {
+    align-self: flex-start;
   }
 
-  .wrapper-data > div:last-child p:nth-child(even) {
+  .wrapper-data > div > div p:nth-child(odd) {
+    font-size: 3rem;
+  }
+
+  .wrapper-data > div  > div  p:nth-child(even) {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
 
   .image-wrapper-rect {
-    width: 70%;
+    width: 75%;
     height: auto;
   }
 
   .enterprise-vahlis {
+    height: 300px;
     padding: 3rem;
   }
 
   .enterprise-vahlis > p:first-child {
     font-size: 1.8rem;
-  }
-  .enterprise-slide  > img {
-    width: 100px;
+    margin-bottom: 3rem;
   }
 
-  .say-vahlis  {
-    padding: 0px 3rem;
+  .enterprise-slide  > img {
+    width: 110px;
+  }
+
+  .say-vahlis {
+    height: 380px;
+    padding: 3rem;
+    padding-top: 0px;
+  }
+
+  .say-vahlis > p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper-one {
+    height: 700px;
+  }
+
+  .wrapper-one .overlay-top {
+    padding: 1rem;
+  }
+
+  .wrapper-one > .overlay-top > div:nth-child(2) p {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #ffffff;
+  }
+
+  .wrapper-two {
+    padding: 1rem;
+    height: 200px;
+  }
+
+  .wrapper-two > div:first-child > p:first-child {
+    font-size: 3rem;
+  }
+
+  .wrapper-two > div:first-child > p {
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 200;
+  }
+
+  .wrapper-vector {
+    height: 500px;
+  }
+  
+  .wrapper-invest {
+    height: 500px;
+  }
+
+  .wrapper-invest > .overlay-invest {
+    padding: 1rem;
+  }
+
+  .wrapper-invest > .overlay-invest > p {
+    font-size: 1rem;
+  }
+
+  .wrapper-legacy {
+    height: 330px;
+  }
+
+  .wrapper-legacy > .overlay {
+    padding: 1rem;
+    justify-content: flex-end;
+  }
+
+  .overlay-content {
+    padding: 80px 20px 0px 0px;
+  }
+  
+  .wrapper-legacy > .overlay  > div > p {
+    font-size: 1rem;
+  }
+
+  .wrapper-legacy > .overlay  > div >  div {
+    padding: 0.6rem 0px;
+  }
+
+  .wrapper-legacy > .overlay  > div >  div > p {
+    font-size: 0.8rem;
+  }
+
+  .wrapper-legacy > .overlay  > div > button {
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .wrapper-quality {
+    height: 160px;
+    padding: 1rem;
+  }
+
+  .wrapper-quality > p, .wrapper-project > p {
+    font-size:  1.4rem;
+  }
+
+  .wrapper-data {
+    flex-direction: column;
+    height: 300px;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .wrapper-data > div:first-child {
+    order: 2;
+  }
+
+  .wrapper-data > div:last-child {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem;
+    order: 1;
+  }
+
+  .wrapper-data > div > div  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wrapper-data > div > div p:nth-child(odd) {
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  .wrapper-data > div > div p:nth-child(even) {
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin-bottom: 0rem;
+  }
+
+  .image-wrapper-rect {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .enterprise-vahlis {
+    height: 150px;
+    padding: 1rem;
+  }
+
+  .enterprise-vahlis > p:first-child {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .enterprise-slide  > img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .say-vahlis {
+    padding: 1rem;
+    height: 340px;
+  }
+
+  .say-vahlis > p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
   }
 }
 

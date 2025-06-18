@@ -57,7 +57,7 @@ const messages = [
 const enterprisesItems = [
   { iconPath: "/logos/globalPayLogo.png", label: "Texas" },
   { iconPath: "/logos/essenzaLogo.png", label: "Scae" },
-  { iconPath: "/logos/santosVahlisLogo.svg", label: "Santos Vahlis" },
+  { iconPath: "/logos/santosVahlisLogo.png", label: "Santos Vahlis" },
   { iconPath: "/logos/belaVistaLogo.png", label: "Cia Rodeo" },
   { iconPath: "/logos/texasLogo.svg", label: "Texas" },
   { iconPath: "/logos/scaeLogo.png", label: "Scae" },
@@ -130,8 +130,8 @@ export default function HomePage() {
           className="vector-image"
           src="/SVG/vector.svg"
           alt="Logo"
-          width={width >= 1336 ? 800 : 600}
-          height={width >= 1336 ? 500 : 300}
+          width={width >= 1336 ? 800 : width >= 900 ? 600 : 450}
+          height={width >= 1336 ? 500 : width >= 600 ? 300 : 250}
         />
       </div>
       <div className="wrapper-invest">
@@ -194,7 +194,9 @@ export default function HomePage() {
       <div className="wrapper-quality" ref={projectRef}>
         <p
           style={{
-            transform: `translateY(-${120 * progress}px)`,
+            transform: `translateY(-${
+              (width >= 1336 ? 120 : 30) * progress
+            }px)`,
             transition: "transform 0.1s ease-out",
           }}
         >
@@ -202,7 +204,9 @@ export default function HomePage() {
         </p>
         <p
           style={{
-            transform: `translateY(-${120 * progress}px)`,
+            transform: `translateY(-${
+              (width >= 1336 ? 120 : 30) * progress
+            }px)`,
             transition: "transform 0.1s ease-out",
           }}
         >
@@ -220,8 +224,8 @@ export default function HomePage() {
         >
           <p
             style={{
-              fontSize: `${1 + width ? 2.4 : 1 * progress}rem`, // 1rem → 3.4rem
-              transform: `translateY(-${180 * progress}px)`, // sobe no máximo 40px
+              fontSize: `${1 + width >= 1336 ? 2.4 : 1.4 * progress}rem`,
+              transform: `translateY(-${width >= 900 ? 120 : 60 * progress}px)`,
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}
           >
@@ -229,8 +233,8 @@ export default function HomePage() {
           </p>
           <p
             style={{
-              fontSize: `${1 + width ? 2.4 : 1 * progress}rem`,
-              transform: `translateY(-${180 * progress}px)`,
+              fontSize: `${1 + width >= 1336 ? 2.4 : 1.4 * progress}rem`,
+              transform: `translateY(-${width >= 900 ? 120 : 60 * progress}px)`,
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}
           >
@@ -248,14 +252,20 @@ export default function HomePage() {
         </div>
 
         <div>
-          <p>{hasAnimated && <Counter end={90} duration={1000} />}+</p>
-          <p>Anos de atuação</p>
+          <div>
+            <p>{hasAnimated && <Counter end={90} duration={1000} />}+</p>
+            <p>Anos de atuação</p>
+          </div>
 
-          <p>{hasAnimated && <Counter end={100} duration={1000} />}%</p>
-          <p>De satisfação</p>
+          <div>
+            <p>{hasAnimated && <Counter end={100} duration={1000} />}%</p>
+            <p>De satisfação</p>
+          </div>
 
-          <p>{hasAnimated && <Counter end={200} duration={1000} />}+</p>
-          <p>Prédios entregues</p>
+          <div>
+            <p>{hasAnimated && <Counter end={200} duration={1000} />}+</p>
+            <p>Prédios entregues</p>
+          </div>
         </div>
       </div>
       <div className="enterprise-vahlis">

@@ -19,6 +19,7 @@
 .nav-menu {
   font-size: 1.3rem;
   font-weight: 200;
+  color: #ffffff;
 }
 
 .nav-menu p {
@@ -29,6 +30,10 @@
 
 .nav-menu p.active {
   font-weight: 500;
+}
+
+.main > button:last-child {
+  display: none;
 }
 
 @media (max-width: 900px) {
@@ -55,7 +60,7 @@
     display: none;
   }
 
-   .main > button:last-child {
+  .main > button:last-child {
     display: block;
   }
 }

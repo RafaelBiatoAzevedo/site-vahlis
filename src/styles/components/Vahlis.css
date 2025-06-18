@@ -69,11 +69,13 @@
   font-size: 2rem;
   padding: 0.3rem 0px 0.5rem 0px;
   font-weight: 400;
+  color: #FFFFFF;
 }
 
 .wrapper-one-vahlis > .overlay-top-vahlis > div:nth-child(2) p {
   font-size: 1.2rem;
   font-weight: 200;
+  color: #FFFFFF;
 }
 
 .wrapper-history  {
@@ -96,6 +98,7 @@
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
+  padding: 2rem;
   gap: 1rem
 }
 
@@ -443,11 +446,6 @@
     font-size: 1.4rem;
     margin-bottom: 0.6rem;
   }
-
-}
-
-@media (max-width: 600px) {
- 
 }
 
 
