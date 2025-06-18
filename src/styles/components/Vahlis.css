@@ -6,7 +6,6 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  border: solid red;
 }
 
 .wrapper-one-vahlis .bg-video,
@@ -476,7 +475,7 @@
 
 @media (max-width: 360px) {
   .wrapper-one-vahlis {
-    height: 100vh;
+    height: 96vh;
   }
 
   .wrapper-one-vahlis .overlay-top-vahlis {
