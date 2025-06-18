@@ -561,7 +561,7 @@
 
 @media (max-width: 360px) {
   .wrapper-one {
-    height: 100vh;
+    height: 90vh;
   }
 
   .wrapper-one .overlay-top {
