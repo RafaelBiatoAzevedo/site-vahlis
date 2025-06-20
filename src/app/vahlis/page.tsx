@@ -267,8 +267,31 @@ export default function Vahlis() {
           <p>Nossa história</p>
         </div>
       </div>
-      <div className="wrapper-timeline-one">
-        <div>
+      <div className="wrapper-timeline">
+        <div className="mobile">
+          {TIMELINE.slice(0, 4).map((line) => (
+            <div key={line.message}>
+              <p>{line.date}</p>
+              <p>{line.message}</p>
+            </div>
+          ))}
+          <img src="/images/image-timeline-one-mobile.jpg" alt="timeline" />
+          {TIMELINE.slice(4, 8).map((line) => (
+            <div key={line.message}>
+              <p>{line.date}</p>
+              <p>{line.message}</p>
+            </div>
+          ))}
+          <img src="/images/image-timeline-two-mobile.jpg" alt="timeline" />
+          {TIMELINE.slice(8).map((line) => (
+            <div key={line.message}>
+              <p>{line.date}</p>
+              <p>{line.message}</p>
+            </div>
+          ))}
+          <img src="/images/image-timeline-three-mobile.jpg" alt="timeline" />
+        </div>
+        <div className="desktop">
           <div>
             {TIMELINE.map((line) => (
               <div key={line.message}>

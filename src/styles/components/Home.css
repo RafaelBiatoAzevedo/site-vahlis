@@ -284,13 +284,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 140px;
   padding: 20px;
 }
 
-.logo-img {
-  width: 150px;
-  height: 100px;
+.enterprise-slide > img {
+  width: 200px;
+  height: 140px;
   object-fit: contain;
 }
 
@@ -307,11 +307,12 @@
   font-size: 1.4rem;
   margin-bottom: 2rem;
   font-weight: 300;
+
 }
 
 .testimonial-slide {
   background: #fff;
-  padding: 20px;
+  padding: 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   height: 100%;
@@ -327,7 +328,7 @@
 .testimonial-slide div {
   background-color:  #CA8A2A;
   height: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .testimonial-slide p {
