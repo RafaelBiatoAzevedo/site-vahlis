@@ -1,7 +1,7 @@
 "use client";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import "../styles/components/Contact.css";
-import ButtonContact from "./ButtonContact";
+import ButtonContact from "./ContactButton";
 
 export default function Contact() {
   const { width } = useWindowSize();

@@ -14,6 +14,7 @@ import useInView from "@/hooks/useInView";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import useInViewCounters from "@/hooks/useInViewCounters";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import ContactModal from "@/components/ContactModal";
 
 const messages = [
   {
@@ -93,6 +94,7 @@ export default function HomePage() {
 
   return (
     <div className="main-home">
+      <ContactModal isOpen={true}></ContactModal>
       <div className="wrapper-one">
         <video
           ref={mainVideoRef}

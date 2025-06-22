@@ -60,10 +60,10 @@
 }
 
 .dropdown-menu p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  margin: 0.5rem 0 !important;
+  font-size: 1.1rem !important;
   font-weight: 300 !important;
-  color: white;
+  color: white !important;
   cursor: pointer;
   border: none !important;
 }

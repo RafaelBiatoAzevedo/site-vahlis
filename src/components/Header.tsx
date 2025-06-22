@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ButtonContact from "./ButtonContact";
+import ButtonContact from "./ContactButton";
 import "../styles/components/Header.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

@@ -6,9 +6,21 @@ import Image from "next/image";
 import { useWindowSize } from "@/hooks/useWindowSize";
 
 const linkItems = [
-  { href: "/", iconPath: "/SVG/icons/facebookIcon.svg", label: "Facebook" },
-  { href: "/", iconPath: "/SVG/icons/linkedinIcon.svg", label: "LinkedIn" },
-  { href: "/", iconPath: "/SVG/icons/layerIcon.svg", label: "Layer" },
+  {
+    href: "https://www.facebook.com/profile.php?id=61568730325829",
+    iconPath: "/SVG/icons/facebookIcon.svg",
+    label: "Facebook",
+  },
+  {
+    href: "https://www.linkedin.com/company/santosvahlisgroup",
+    iconPath: "/SVG/icons/linkedinIcon.svg",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/santosvahlisgroup",
+    iconPath: "/SVG/icons/instagram.svg",
+    label: "Layer",
+  },
 ];
 
 export default function Footer() {
