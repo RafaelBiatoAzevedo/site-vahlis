@@ -85,7 +85,7 @@
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 430) {
   .main-footer > p:last-child {
     padding: 0.6rem 0px;
     font-size: 0.7rem;

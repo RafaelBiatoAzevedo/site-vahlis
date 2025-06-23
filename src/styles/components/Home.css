@@ -391,6 +391,18 @@
   height: 100%;
 }
 
+
+.fade-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 1336px) {
   .wrapper-one {
     height: 100vh;
@@ -476,7 +488,7 @@
   }
 
   .wrapper-legacy {
-    height: 380px;
+    height: 430;
   }
   
   .wrapper-legacy > .overlay  > div > p {
@@ -549,7 +561,7 @@
   }
 
   .say-vahlis {
-    height: 380px;
+    height: 430;
     padding: 3rem;
     padding-top: 0px;
   }
@@ -560,7 +572,7 @@
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 430) {
   .wrapper-one {
     height: 93vh;
   }
@@ -679,8 +691,8 @@
   }
 
   .wrapper-data > div > div p:nth-child(even) {
-    font-size: 0.8rem;
-    font-weight: 200;
+    font-size: 0.7rem;
+    font-weight: 200 !important;
     margin-bottom: 0rem;
   }
 

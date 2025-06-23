@@ -11,11 +11,19 @@ export function useScrollProgress(ref: React.RefObject<HTMLElement | null>) {
       const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const distance = rect.top;
-      const total = windowHeight * 0.4;
+      const start = windowHeight * 0.3;
+      const end = windowHeight * 0.5;
 
-      const p = 1 - Math.min(Math.max(distance / total, 0), 1);
-      setProgress(p);
+      const distance = rect.top;
+
+      if (distance > start) {
+        setProgress(0);
+      } else if (distance < end) {
+        setProgress(1);
+      } else {
+        const p = 1 - (distance - end) / (start - end);
+        setProgress(p);
+      }
     };
 
     handleScroll(); // inicial

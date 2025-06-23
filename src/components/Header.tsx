@@ -9,6 +9,7 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import MenuIcon from "./MenuIcon";
 import { useState } from "react";
 import CloseIcon from "./CloseIcon";
+import { useContactModalContext } from "@/context/ContactModalContext";
 
 const menuItems = [
   { href: "/", label: "Inicio" },
@@ -24,6 +25,7 @@ export default function Header({ absolute }: HeaderProps) {
   const pathname = usePathname();
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
+  const { openModal } = useContactModalContext();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -52,13 +54,13 @@ export default function Header({ absolute }: HeaderProps) {
             );
           })}
         </nav>
-        <ButtonContact size="small" />
+        <ButtonContact onClick={openModal} size="small" />
         <button className="menu-toggle" onClick={toggleMenu}>
           <MenuIcon />
         </button>
       </div>
 
-      {isOpen && width <= 360 && (
+      {isOpen && width <= 430 && (
         <div className="dropdown-menu">
           <div>
             <Image
@@ -81,7 +83,7 @@ export default function Header({ absolute }: HeaderProps) {
               </Link>
             );
           })}
-          <ButtonContact size="small" />
+          <ButtonContact onClick={openModal} size="small" />
         </div>
       )}
     </>

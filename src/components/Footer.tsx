@@ -43,7 +43,7 @@ export default function Footer() {
           <p>Siga-nos em nossas redes</p>
           <div>
             {linkItems.map((item) => (
-              <Link key={item.label} href={item.href}>
+              <Link key={item.label} href={item.href} target="_blank">
                 <Image
                   src={item.iconPath}
                   alt={item.label}

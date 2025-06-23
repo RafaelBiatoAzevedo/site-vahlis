@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function useInViewCounters(threshold = 0.3) {
+export default function useInViewCounters(threshold = 0.7) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);

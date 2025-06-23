@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import { ReactNode } from "react";
 import { Outfit } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Playfair_Display } from "next/font/google";
 import Contact from "@/components/Contact";
+import { ContactModalProvider } from "@/context/ContactModalContext";
+import { ReactNode } from "react";
+import ContactModalWrapper from "@/components/ContactModalWrapper";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -33,9 +35,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" className={`${outfit.variable} ${playfair.variable}`}>
       <head />
       <body>
-        {children}
-        <Contact />
-        <Footer />
+        <ContactModalProvider>
+          <ContactModalWrapper />
+          {children}
+          <Contact />
+          <Footer />
+        </ContactModalProvider>
       </body>
     </html>
   );

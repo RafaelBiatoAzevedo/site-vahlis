@@ -14,7 +14,8 @@ import useInView from "@/hooks/useInView";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import useInViewCounters from "@/hooks/useInViewCounters";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import ContactModal from "@/components/ContactModal";
+import { useContactModalContext } from "@/context/ContactModalContext";
+import { useScrollFadeIn } from "@/hooks/useScrollFadeInLineSequency";
 
 const messages = [
   {
@@ -71,6 +72,7 @@ export default function HomePage() {
   const legacyVideoRef = useRef<HTMLVideoElement>(null);
   const mainVideoRef = useRef<HTMLVideoElement>(null);
   const mainFallbackRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useContactModalContext();
   const { width } = useWindowSize();
 
   const handleMainVideoError = () => {
@@ -91,10 +93,10 @@ export default function HomePage() {
   const { ref: legacyRef, isVisible } = useInView(0.3, true);
   const projectRef = useRef<HTMLDivElement | null>(null);
   const progress = useScrollProgress(projectRef);
+  const setFadeRef = useScrollFadeIn(0.2);
 
   return (
     <div className="main-home">
-      <ContactModal isOpen={true}></ContactModal>
       <div className="wrapper-one">
         <video
           ref={mainVideoRef}
@@ -121,10 +123,18 @@ export default function HomePage() {
       </div>
       <div className="wrapper-two">
         <div>
-          <p>“</p>
-          <p>Damos início a narrativas</p>
-          <p>duradouras que</p>
-          <p>transcendem gerações</p>
+          <p className="fade-line" ref={setFadeRef}>
+            “
+          </p>
+          <p className="fade-line" ref={setFadeRef}>
+            Damos início a narrativas
+          </p>
+          <p className="fade-line" ref={setFadeRef}>
+            duradouras que
+          </p>
+          <p className="fade-line" ref={setFadeRef}>
+            transcendem gerações
+          </p>
         </div>
       </div>
       <div className="wrapper-vector">
@@ -181,7 +191,7 @@ export default function HomePage() {
               <p>empreendimentos que ajudaram a moldar o cenário</p>
               <p>urbano do país.</p>
             </div>
-            <button>
+            <button onClick={openModal}>
               Conheça mais da Vahlis
               <ArrowRightIcon
                 width={20}

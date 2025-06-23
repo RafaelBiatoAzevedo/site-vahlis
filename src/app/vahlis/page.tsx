@@ -258,9 +258,8 @@ export default function Vahlis() {
               <p>Valores</p>
             </div>
             <p>Excelência, responsabilidade</p>
-            <p>e ética guiam cada projeto e </p>
-            <p></p>
-            <p></p>
+            <p>e ética guiam cada projeto e</p>
+            <p>todas as nossas relações.</p>
           </div>
         </div>
         <div>
