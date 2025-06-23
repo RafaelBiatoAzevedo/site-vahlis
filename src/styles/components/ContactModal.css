@@ -101,3 +101,88 @@
   color: #000000;
   cursor: pointer;
 }
+
+@media (max-width: 1336px) {
+  .modal-form > p {
+    font-size: 1.8rem;
+  }
+
+  .modal-form input {
+    font-size: 1rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .modal-form > form > div > p {
+    font-size: 0.8rem;
+    color: #000000;
+    font-weight: 200;
+  }
+
+  .modal-form button:first-child {
+    font-size: 1.4rem;
+  }
+
+  .modal-form button:last-child {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .modal-form  input[type="radio"] {
+    width: 2.4rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal-form > p {
+    font-size: 1.4rem;
+  }
+
+  .modal-form input {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .modal-form > form > div > p {
+    font-size: 0.6rem;
+    font-weight: 200;
+  }
+
+  .modal-form button:last-child {
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal-content > div:first-child {
+    display: none;
+    }
+  
+  .modal-form  {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .modal-form {
+   align-items: center;
+  }
+
+  .modal-form button:first-child {
+    font-size: 1.2rem;
+  }
+}
