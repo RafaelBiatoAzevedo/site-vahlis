@@ -24,10 +24,7 @@ export const metadata: Metadata = {
   title: "Vahlis",
   description: "Vahlis encorporadora",
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico" },
-    ],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
   },
 };
 
