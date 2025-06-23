@@ -32,7 +32,7 @@
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .main-contact {
     min-height: 200px;
   }
