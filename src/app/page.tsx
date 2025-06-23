@@ -148,6 +148,13 @@ export default function HomePage() {
       </div>
       <div className="wrapper-invest">
         <div className="overlay-invest">
+          {/* <Image
+            className="vector-image"
+            src="/SVG/vector.svg"
+            alt="Logo"
+            width={width >= 1336 ? 800 : width >= 900 ? 600 : 450}
+            height={width >= 1336 ? 500 : width >= 600 ? 300 : 250}
+          /> */}
           <p>Desenvolvemos espaços</p>
           <p>
             que valorizam quem <b>vive</b>

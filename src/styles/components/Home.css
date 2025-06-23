@@ -86,10 +86,8 @@
 .wrapper-vector {
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   height: 1000px;
-  padding: 7rem 4rem;
   background-color: #ffffff;
 }
 
@@ -97,7 +95,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -120,6 +118,10 @@
   align-items: flex-start;
   justify-content: center;
   padding: 5rem;
+}
+
+.wrapper-invest .overlay-invest > img {
+  filter: brightness(0) invert(1);
 }
 
 .wrapper-invest > .overlay-invest > p {
@@ -391,12 +393,12 @@
   height: 100%;
 }
 
-
 .fade-line {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
+
 
 .fade-line.visible {
   opacity: 1;

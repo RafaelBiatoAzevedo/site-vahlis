@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import "../styles/components/ContactModal.css";
 import CloseIcon from "./CloseIcon";
 
@@ -10,6 +11,13 @@ interface IModalProps {
 
 export default function ContactModal({ isOpen, onClose }: IModalProps) {
   if (!isOpen) return null;
+
+  const [isAccept, setIsAccept] = useState(false);
+
+  const toggleAccept = () => {
+    setIsAccept(!isAccept);
+    console.log(isAccept);
+  };
 
   return (
     <div className="modal-overlay">
@@ -41,7 +49,13 @@ export default function ContactModal({ isOpen, onClose }: IModalProps) {
               placeholder="Seu melhor e-mail"
             />
             <div>
-              <input type="radio" name="accept" value="1" />
+              <input
+                type="checkbox"
+                name="accept"
+                value="1"
+                checked={isAccept}
+                onChange={toggleAccept}
+              />
               <p>
                 Concordo com a [Política de Privacidade] e autorizo o uso dos
                 meus dados apenas para fins de contato relacionados ao meu
