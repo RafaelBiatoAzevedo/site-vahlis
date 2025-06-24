@@ -243,8 +243,12 @@ export default function HomePage() {
         >
           <p
             style={{
-              fontSize: `${1 + width >= 1336 ? 2.4 : 1.4 * progress}rem`,
-              transform: `translateY(-${width >= 900 ? 120 : 60 * progress}px)`,
+              fontSize: `${
+                width >= 1336 ? 3.4 : width >= 900 ? 2 : 1.4 * progress
+              }rem`,
+              transform: `translateY(-${
+                width >= 1336 ? 180 : width >= 900 ? 70 : 50 * progress
+              }px)`,
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}
           >
@@ -252,8 +256,12 @@ export default function HomePage() {
           </p>
           <p
             style={{
-              fontSize: `${1 + width >= 1336 ? 2.4 : 1.4 * progress}rem`,
-              transform: `translateY(-${width >= 900 ? 120 : 60 * progress}px)`,
+              fontSize: `${
+                width >= 1336 ? 3.4 : width >= 900 ? 2 : 1.4 * progress
+              }rem`,
+              transform: `translateY(-${
+                width >= 1336 ? 180 : width >= 900 ? 70 : 50 * progress
+              }px)`,
               transition: "font-size 0.15s ease-out, transform 0.15s ease-out",
             }}
           >

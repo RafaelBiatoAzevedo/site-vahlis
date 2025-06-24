@@ -262,9 +262,9 @@
   height: 900px;
 }
 
-.desktop > img {
-  width: 50%;
-  height: 900px;
+.desktop > div:last-child > img {
+  width: 60%;
+  height: 100%;
 }
 
 .desktop {
@@ -281,11 +281,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 90%;
-  overflow-y: auto;
+  width: 100%;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.spacer {
+  padding-bottom: 14rem !important;
+}
+
+
+.desktop > div:last-child {
+  align-items: flex-end;
 }
 
 .desktop > div::-webkit-scrollbar {
@@ -298,6 +306,7 @@
   padding: 3rem 10rem 3rem 0.2rem;
   border-left: #000000 solid 2px;
   margin-left: 8rem;
+
 }
 
 .desktop  > div > div > div:first-child {
@@ -339,6 +348,25 @@
     padding-left: 2.5rem;
     border: solid 1px #000000;
     border-radius: 1.6rem;
+  }
+
+  .desktop > div:last-child {
+    width: 55%;
+  }
+
+  .desktop > div:first-child > div {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+  }
+
+  .desktop > div:last-child > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .spacer {
+    padding-bottom: 12rem !important;
   }
 }
 
@@ -431,21 +459,23 @@
     font-size: 1.6rem;
   }
 
-  .desktop {
-    height: 600px;
+
+   .desktop > div:last-child {
+    width: 55%;
   }
 
-  .desktop > img {
-    width: 40%;
-    height: 600px;
-  }
-
-  .desktop > div > div {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem 3rem 1rem 0.2rem;
-    border-left: #000000 solid 2px;
+  .desktop > div:first-child > div {
+    padding: 1rem;
     margin-left: 2rem;
+  }
+
+  .desktop > div:last-child > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .spacer {
+    padding-bottom: 6rem !important;
   }
 
   .desktop > div > div > div:first-child {

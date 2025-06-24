@@ -1,0 +1,50 @@
+.scroll-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 50%;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.text-item {
+  min-width: 85vh;
+  text-align: center;
+  font-size: 3rem;
+  opacity: 0.3;
+  transform: scale(0.8);
+  transition: all 0.1s ease;
+  border: solid red;
+}
+
+.text-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.image-list {
+  display: flex;
+  flex-direction: column; /* ESSENCIAL para scroll vertical */
+  height: 100%;
+  z-index: 100;
+}
+
+.image-item {
+  min-height: 100vh;
+  width: 100%;
+
+}
+
+.image-item.active {
+  filter: brightness(1); /* destaque opcional */
+}

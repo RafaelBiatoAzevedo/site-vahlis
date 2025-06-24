@@ -102,7 +102,6 @@ export default function Vahlis() {
           <Header />
           <div>
             <div>
-              <p>{width}</p>
               <p>Conhecendo a Vahlis</p>
               <p>Desde 1933, construindo um legado que </p>
               <p>atravessa gerações.</p>
@@ -293,8 +292,11 @@ export default function Vahlis() {
         </div>
         <div className="desktop">
           <div>
-            {TIMELINE.map((line) => (
-              <div key={line.message}>
+            {TIMELINE.map((line, index) => (
+              <div
+                key={line.message}
+                className={[3, 7].includes(index) ? "spacer" : ""}
+              >
                 <div>
                   <Image
                     src="/SVG/icons/pointTimeline.svg"
@@ -311,7 +313,11 @@ export default function Vahlis() {
             ))}
           </div>
 
-          <img src="/images/image-timeline-one.jpg" alt="timeline" />
+          <div>
+            <img src="/images/image-timeline-one.jpg" alt="timeline" />
+            <img src="/images/image-timeline-two.jpg" alt="timeline" />
+            <img src="/images/image-timeline-three.jpg" alt="timeline" />
+          </div>
         </div>
       </div>
     </div>
