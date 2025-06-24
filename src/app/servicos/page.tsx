@@ -26,6 +26,7 @@ export default function Servicos() {
     if (legalizationFallbackRef.current)
       legalizationFallbackRef.current.style.display = "block";
   };
+
   return (
     <div className="main-services">
       <div className="wrapper-one-services">

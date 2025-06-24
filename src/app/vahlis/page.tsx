@@ -102,6 +102,7 @@ export default function Vahlis() {
           <Header />
           <div>
             <div>
+              <p>{width}</p>
               <p>Conhecendo a Vahlis</p>
               <p>Desde 1933, construindo um legado que </p>
               <p>atravessa gerações.</p>
