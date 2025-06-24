@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import MenuIcon from "./MenuIcon";
 import { useState } from "react";
-import CloseIcon from "./CloseIcon";
 import { useContactModalContext } from "@/context/ContactModalContext";
 
 import { menuItems } from "@/constants/menuItems";
