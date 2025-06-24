@@ -44,7 +44,7 @@
   }
 }
 
-@media (max-width: 430) {
+@media (max-width: 430px) {
    .main > button {
     display: none;
   }

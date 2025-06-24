@@ -462,7 +462,7 @@
   }
 }
 
-@media (max-width: 430) {
+@media (max-width: 430px) {
   .wrapper-one-vahlis {
     height: 93vh;
   }

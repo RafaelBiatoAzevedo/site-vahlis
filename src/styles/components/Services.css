@@ -430,7 +430,7 @@
   }
 }
 
-@media (max-width: 430) {
+@media (max-width: 430px) {
   .wrapper-one-services {
     height: 93vh;
   }

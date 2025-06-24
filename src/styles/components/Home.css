@@ -490,7 +490,7 @@
   }
 
   .wrapper-legacy {
-    height: 430;
+    height: 430px;
   }
   
   .wrapper-legacy > .overlay  > div > p {
@@ -563,7 +563,7 @@
   }
 
   .say-vahlis {
-    height: 430;
+    height: 430px;
     padding: 3rem;
     padding-top: 0px;
   }
@@ -574,7 +574,7 @@
   }
 }
 
-@media (max-width: 430) {
+@media (max-width: 430px) {
   .wrapper-one {
     height: 93vh;
   }
