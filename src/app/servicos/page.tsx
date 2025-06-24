@@ -54,7 +54,19 @@ export default function Servicos() {
         </div>
       </div>
       <div className="wrapper-organization">
-        <div>
+        <div className="mobile">
+          <p>Originação de Área</p>
+          <p>
+            A Vahlis atua com foco na identificação estratégica de terrenos e
+          </p>
+          <p>no desenvolvimento de empreendimentos de alto padrão, criando</p>
+          <p>
+            valor para construtoras, investidores e para a cidade. Cada etapa
+          </p>
+          <p>é conduzida com rigor técnico, visão urbana e um olhar apurado</p>
+          <p>para o potencial de cada região.</p>
+        </div>
+        <div className="desktop">
           <p>Originação de Área</p>
           <p>
             A Vahlis atua com foco na identificação estratégica de terrenos e no
@@ -86,7 +98,9 @@ export default function Servicos() {
             <p>demanda local.</p>
           </div>
         </div>
-        <img src="/SVG/imageAnalysis.svg" alt="architect" />
+        <div>
+          <img src="/SVG/imageAnalysis.svg" alt="architect" />
+        </div>
       </div>
       <div className="wrapper-acquisition">
         <div>
@@ -98,7 +112,9 @@ export default function Servicos() {
             <p>às exigências de mercado.</p>
           </div>
         </div>
-        <img src="/SVG/imageAcquisition.svg" alt="project" />
+        <div>
+          <img src="/SVG/imageAcquisition.svg" alt="project" />
+        </div>
       </div>
       <div className="wrapper-legalization">
         <video

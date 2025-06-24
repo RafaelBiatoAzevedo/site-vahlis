@@ -88,6 +88,10 @@
   background-color: #ffffff;
 }
 
+.wrapper-organization > .mobile {
+  display: none;
+}
+
 .wrapper-organization > div, .wrapper-howmake > div {
   display: flex;
   flex-direction: column;
@@ -128,16 +132,19 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  height: 500px;
+  justify-content: space-between;
+  height: 830px;
+  background-color: #ffff;
 }
 
-.wrapper-analysis >  img, .wrapper-acquisition > img {
+.wrapper-analysis > div >  img, .wrapper-acquisition > div > img {
   height: 100%;
+  object-fit: contain;
+
 }
 
-.wrapper-analysis > div, .wrapper-acquisition > div {
-  width: 100%;
+.wrapper-analysis > div:first-child, .wrapper-acquisition > div:first-child {
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -146,6 +153,17 @@
   background-color: #ffffff;
   padding: 5rem;
 }
+
+.wrapper-analysis > div:last-child, .wrapper-acquisition > div:last-child {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
 
 .wrapper-analysis > div > p, .wrapper-acquisition > div > p {
   font-size: 2rem;
@@ -304,6 +322,10 @@
     height: 100vh;
   }
 
+  .wrapper-analysis, .wrapper-acquisition {
+    height: 600px;
+  }
+
   .wrapper-legalization {
     height: 500px;
   }
@@ -313,10 +335,13 @@
   }
 }
 
-
 @media (max-width: 900px) {
   .wrapper-one-services {
     height: 100vh;
+  }
+
+  .wrapper-analysis, .wrapper-acquisition {
+    height: 400px;
   }
 
   .wrapper-one-services .overlay-top-services > div:nth-child(2) p:first-child {
@@ -350,32 +375,34 @@
   }
 
   .wrapper-analysis , .wrapper-acquisition {
-    height: 350px;
+    height:410px;
   }
 
-  .wrapper-analysis > div, .wrapper-acquisition > div {
+  .wrapper-analysis > div:first-child, .wrapper-acquisition > div:first-child {
     padding: 3rem;
   }
 
-.wrapper-analysis > div > p, .wrapper-acquisition > div > p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #000000;
-}
+  .wrapper-analysis > div > div > p, .wrapper-acquisition > div > div > p {
+    font-size: 0.9rem !important;
+  }
 
-.wrapper-analysis > div > div, .wrapper-acquisition > div > div  {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0.8rem;
-}
+  .wrapper-analysis > div > p, .wrapper-acquisition > div > p {
+    font-size: 1.2rem;
+  }
 
-.wrapper-analysis > div > div >  p, .wrapper-acquisition > div > div > p {
-  font-size: 1rem;
-  color: #000000;
-  font-weight: 200;
-}
+  .wrapper-analysis > div > div, .wrapper-acquisition > div > div  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.8rem;
+  }
+
+  .wrapper-analysis > div > div >  p, .wrapper-acquisition > div > div > p {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 200;
+  }
 
   .wrapper-legalization {
     height: 350px;
@@ -425,8 +452,16 @@
     height: 180px;
   }
 
+  .wrapper-organization > .mobile {
+    display: flex;
+  }
+
+  .wrapper-organization > .desktop {
+    display: none;
+  }
+
   .wrapper-organization > div > p {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
 
   .wrapper-organization > div > p:first-child {
@@ -444,32 +479,38 @@
 
   .wrapper-analysis , .wrapper-acquisition {
     flex-direction: column;
-    height: 100%;
-  }
-
-  .wrapper-analysis > div, .wrapper-acquisition > div {
-    padding: 3rem 1rem;
-     align-items: center;
   }
 
   .wrapper-analysis > div > p, .wrapper-acquisition > div > p {
     font-size: 1rem;
   }
 
-  .wrapper-analysis > div > div, .wrapper-acquisition > div > div  {
-    display: flex;
+  .wrapper-analysis, .wrapper-acquisition  {
     flex-direction: column;
+    height: auto;
+  }
+
+  .wrapper-analysis > div:first-child, .wrapper-acquisition > div:first-child {
+    width: 100% !important;
     align-items: center;
-    justify-content: center;
-    padding-top: 0.8rem;
+    padding: 2rem 1rem !important;
+  }
+
+  .wrapper-analysis > div > div, .wrapper-acquisition > div > div {
+    align-items: center;
   }
 
   .wrapper-analysis > div > div >  p, .wrapper-acquisition > div > div > p {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
   }
 
-  .wrapper-analysis >  img, .wrapper-acquisition > img {
-    width: 100%;
+  .wrapper-analysis > div:last-child, .wrapper-acquisition > div:last-child {
+    width: 100% !important;
+  }
+
+  .wrapper-analysis > div >  img, .wrapper-acquisition > div > img {
+    width: 100% !important;
+    
   }
 
   .wrapper-legalization {
