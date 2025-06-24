@@ -23,7 +23,7 @@ export default function MobileMenu() {
       <div className="dropdown-menu">
         <div>
           <Image src="/SVG/vahlisLogo.svg" alt="Logo" width={80} height={30} />
-          <CloseIcon onClick={toggleMenu} color="#fffff" />
+          <CloseIcon onClick={toggleMenu} stroke="white" fill="write" />
         </div>
 
         {menuItems.map((item) => (

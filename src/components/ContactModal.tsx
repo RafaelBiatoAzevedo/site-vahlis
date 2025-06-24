@@ -24,7 +24,7 @@ export default function ContactModal() {
         </div>
         <div className="modal-form">
           <button className="modal-close" onClick={closeModal}>
-            <CloseIcon />
+            <CloseIcon fill="black" stroke="black" />
           </button>
 
           <p className="fade-in">Preencha o formulário e</p>

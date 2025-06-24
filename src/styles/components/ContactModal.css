@@ -180,12 +180,14 @@
   .modal-content > div:first-child {
     display: none;
   }
+
+  .modal-form > button:first-child {
+    padding-top: 1rem !important;
+  }
   
   .modal-form  {
     width: 100%;
-    height: 93vh;
     padding: 1rem;
-    padding-top: 3rem;
   }
 
   .modal-form {
