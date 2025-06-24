@@ -11,7 +11,7 @@ export function useScrollProgress(ref: React.RefObject<HTMLElement | null>) {
       const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const start = windowHeight * 0.3;
+      const start = windowHeight * 0.6;
       const end = windowHeight * 0.5;
 
       const distance = rect.top;
