@@ -13,7 +13,7 @@ export default function CloseIcon({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill="none"
+      fill="#fff"
       stroke="currentColor"
       strokeWidth={2}
       strokeLinecap="round"
