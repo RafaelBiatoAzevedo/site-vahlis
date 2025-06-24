@@ -190,6 +190,10 @@
    align-items: center;
   }
 
+  .modal-form input {
+     border-radius: 0.4rem;
+  }
+
   .modal-form button:first-child {
     font-size: 1.2rem;
   }

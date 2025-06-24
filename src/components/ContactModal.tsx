@@ -3,16 +3,13 @@
 import { useState } from "react";
 import "../styles/components/ContactModal.css";
 import CloseIcon from "./CloseIcon";
+import { useContactModalContext } from "@/context/ContactModalContext";
 
-interface IModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function ContactModal({ isOpen, onClose }: IModalProps) {
-  if (!isOpen) return null;
-
+export default function ContactModal() {
+  const { isOpen, closeModal } = useContactModalContext();
   const [isAccept, setIsAccept] = useState(false);
+
+  if (!isOpen) return null;
 
   const toggleAccept = () => {
     setIsAccept(!isAccept);
@@ -26,12 +23,13 @@ export default function ContactModal({ isOpen, onClose }: IModalProps) {
           <img src="/images/image-vector-modal.jpg" alt="vector" />
         </div>
         <div className="modal-form">
-          <button className="modal-close" onClick={onClose}>
+          <button className="modal-close" onClick={closeModal}>
             <CloseIcon />
           </button>
 
           <p className="fade-in">Preencha o formulário e</p>
           <p className="fade-in">fale com nossa equipe.</p>
+
           <form>
             <input type="text" name="name" required placeholder="Nome" />
 
@@ -48,6 +46,7 @@ export default function ContactModal({ isOpen, onClose }: IModalProps) {
               required
               placeholder="Seu melhor e-mail"
             />
+
             <div>
               <input
                 type="checkbox"

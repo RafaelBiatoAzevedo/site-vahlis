@@ -558,14 +558,14 @@
   }
 
   .mobile > div > p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     color: #000000;
   }
 
   .mobile > div > p:first-child {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 400;
     margin-bottom: 0.4rem;
   }
 

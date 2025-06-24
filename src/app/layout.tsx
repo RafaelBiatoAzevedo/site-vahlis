@@ -6,7 +6,9 @@ import { Playfair_Display } from "next/font/google";
 import Contact from "@/components/Contact";
 import { ContactModalProvider } from "@/context/ContactModalContext";
 import { ReactNode } from "react";
-import ContactModalWrapper from "@/components/ContactModalWrapper";
+import { MobileMenuProvider } from "@/context/MobileMenuContext";
+import ContactModal from "@/components/ContactModal";
+import MobileMenu from "@/components/MobileMenu";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -33,14 +35,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} ${playfair.variable}`}>
-      <head />
       <body>
-        <ContactModalProvider>
-          <ContactModalWrapper />
-          {children}
-          <Contact />
-          <Footer />
-        </ContactModalProvider>
+        <MobileMenuProvider>
+          <ContactModalProvider>
+            <ContactModal />
+            <MobileMenu />
+            {children}
+            <Contact />
+            <Footer />
+          </ContactModalProvider>
+        </MobileMenuProvider>
       </body>
     </html>
   );

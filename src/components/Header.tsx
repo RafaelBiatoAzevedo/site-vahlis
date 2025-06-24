@@ -11,11 +11,8 @@ import { useState } from "react";
 import CloseIcon from "./CloseIcon";
 import { useContactModalContext } from "@/context/ContactModalContext";
 
-const menuItems = [
-  { href: "/", label: "Inicio" },
-  { href: "/servicos", label: "Serviços" },
-  { href: "/vahlis", label: "A Vahlis" },
-];
+import { menuItems } from "@/constants/menuItems";
+import { useMobileMenuContext } from "@/context/MobileMenuContext";
 
 type HeaderProps = {
   absolute?: boolean;
@@ -26,10 +23,7 @@ export default function Header({ absolute }: HeaderProps) {
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
   const { openModal } = useContactModalContext();
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const { toggleMenu } = useMobileMenuContext();
 
   return (
     <>
@@ -55,37 +49,10 @@ export default function Header({ absolute }: HeaderProps) {
           })}
         </nav>
         <ButtonContact onClick={openModal} size="small" />
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <button className="menu-mobile" onClick={toggleMenu}>
           <MenuIcon />
         </button>
       </div>
-
-      {isOpen && width <= 430 && (
-        <div className="dropdown-menu">
-          <div>
-            <Image
-              src="/SVG/vahlisLogo.svg"
-              alt="Logo"
-              width={width > 600 ? 120 : 80}
-              height={width > 600 ? 40 : 30}
-            />
-            <CloseIcon onClick={toggleMenu} />
-          </div>
-          {menuItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-              >
-                <p className={isActive ? "active" : ""}>{item.label}</p>
-              </Link>
-            );
-          })}
-          <ButtonContact onClick={openModal} size="small" />
-        </div>
-      )}
     </>
   );
 }
