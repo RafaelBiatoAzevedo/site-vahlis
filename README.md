@@ -47,6 +47,6 @@ Acesse no navegador:
 Abra http://localhost:3000 para visualizar o resultado.
 
 🌐 Deploy
-O projeto está configurado para deploy contínuo na Vercel. Cada push na branch main gera uma nova versão em produção automaticamente.
+O projeto está configurado para deploy contínuo na Netlify. Cada push na branch main gera uma nova versão em produção automaticamente.
 
 Desenvolvido por Rafael Azevedo 🚀
