@@ -32,7 +32,7 @@ Responsividade Total: Design adaptável para Mobile, Tablet e Desktop.
 Clone o repositório:
 
 Bash
-git clone https://github.com/seu-usuario/vahlis-landing-page.git
+git clone https://github.com/seu-usuario/vahlis-landing-page.git](https://github.com/RafaelBiatoAzevedo/site-vahlis.git
 Instale as dependências:
 
 Bash
